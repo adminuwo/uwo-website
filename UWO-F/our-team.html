@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UWO™ | Our Team</title>
+  <link rel="icon" type="image/webp" href="images/uwo-logo.png">
+
+  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="earn-refer.css?v=1.5">
+  <link rel="stylesheet" href="chatbot.css?v=1.1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* ================= BIDIRECTIONAL SCROLL ANIMATIONS ================= */
+    .scroll-reveal {
+      opacity: 0;
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    /* Approaching when scrolling DOWN (top to bottom) */
+    .scroll-reveal.from-bottom:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(45px) scale(0.97);
+    }
+
+    /* Approaching when scrolling UP (bottom to top) */
+    .scroll-reveal.from-top:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(-45px) scale(0.97);
+    }
+
+    /* Leadership Founder lateral glide */
+    .leadership-profile:not(.alt-row).from-bottom:not(.is-visible) {
+      opacity: 0;
+      transform: translate(-30px, 40px) scale(0.98);
+    }
+
+    .leadership-profile:not(.alt-row).from-top:not(.is-visible) {
+      opacity: 0;
+      transform: translate(-30px, -40px) scale(0.98);
+    }
+
+    /* Leadership Co-founder lateral glide */
+    .leadership-profile.alt-row.from-bottom:not(.is-visible) {
+      opacity: 0;
+      transform: translate(30px, 40px) scale(0.98);
+    }
+
+    .leadership-profile.alt-row.from-top:not(.is-visible) {
+      opacity: 0;
+      transform: translate(30px, -40px) scale(0.98);
+    }
+
+    /* Fully visible state */
+    .scroll-reveal.is-visible {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Staggered transition delays for grid cards */
+    .dept-grid .team-card:nth-child(4n + 1) {
+      transition-delay: 0.04s;
+    }
+
+    .dept-grid .team-card:nth-child(4n + 2) {
+      transition-delay: 0.12s;
+    }
+
+    .dept-grid .team-card:nth-child(4n + 3) {
+      transition-delay: 0.20s;
+    }
+
+    .dept-grid .team-card:nth-child(4n + 4) {
+      transition-delay: 0.28s;
+    }
+
+    .team-card.is-visible:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 0 16px 36px rgba(214, 165, 89, 0.18) !important;
+    }
+  </style>
+
+  <script src="earn-refer.js?v=1.5"></script>
+  <script src="main.js?v=3.5" defer></script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "xn9x5cied5");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1072566655124889');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1" /></noscript>
+
+  <!-- ================= OVERLAY ================= -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/uwo-logo.png" alt="UWO<sup>™</sup> Logo">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects ▾</span>
+          <div class="projects-menu">
+            <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+            <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+            <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+          </div>
+        </div>
+        <a href="our-team.html" class="active" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()"
+          title="Earn &amp; Refer"
+          style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+          <i class="fa-solid fa-gift"
+            style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn
+          &amp; Refer
+        </button>
+      </nav>
+      <div class="hamburger" onclick="toggleDrawer()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER (Sidebar) ================= -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-logo">
+        <img src="images/uwo-logo.png" alt="UWO Logo">
+        <span>UWO<sup>™</sup></span>
+      </div>
+      <div class="mobile-drawer-close" onclick="toggleDrawer()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <a href="index.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Home</a>
+    <a href="about.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+
+    <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+      Our Projects <span>▾</span>
+    </div>
+
+    <div id="mobileProjects" class="mobile-projects">
+      <a href="aisa.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+      <a href="/aisa-connect/" target="_blank" onclick="toggleDrawer()" rel="noopener noreferrer">AISA Connect</a>
+      <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+      <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+    </div>
+
+    <a href="our-team.html" onclick="toggleDrawer()" class="active" target="_blank" rel="noopener noreferrer">Our
+      Team</a>
+    <a href="blogs.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Blogs</a>
+    <a href="contact.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Contact</a>
+    <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+      <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+    </a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-centered" style="min-height: 50vh; background-image:url('images/team-bg..webp');">
+    <div class="hero-content-centered" data-aos="fade-up">
+      <h1>Our Team</h1>
+      <p>
+        The minds behind the machines. A collective of engineers, researchers,
+        and strategists building the future of intelligence.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= DYNAMIC TEAM SECTION ================= -->
+  <div id="dynamic-team-wrapper">
+    <section class="section section-gold">
+      <div class="container" style="max-width: 1200px; text-align: center;">
+        <h2 class="section-title" data-aos="zoom-in" data-aos-duration="1000">Meet the Team</h2>
+        <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 50px;">
+          <!-- Skeleton Loader -->
+          <div class="skeleton-row"
+            style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap; justify-content: center; animation: skeleton-pulse 1.5s infinite ease-in-out;">
+            <div style="width: 260px; height: 260px; background: rgba(214,165,89,0.1); border-radius: 50%;"></div>
+            <div style="flex: 1; min-width: 280px; text-align: left;">
+              <div
+                style="height: 28px; width: 45%; background: rgba(0,0,0,0.07); border-radius: 6px; margin-bottom: 12px;">
+              </div>
+              <div
+                style="height: 18px; width: 20%; background: rgba(214,165,89,0.1); border-radius: 6px; margin-bottom: 20px;">
+              </div>
+              <div
+                style="height: 14px; width: 95%; background: rgba(0,0,0,0.04); border-radius: 4px; margin-bottom: 8px;">
+              </div>
+              <div
+                style="height: 14px; width: 90%; background: rgba(0,0,0,0.04); border-radius: 4px; margin-bottom: 8px;">
+              </div>
+              <div style="height: 14px; width: 70%; background: rgba(0,0,0,0.04); border-radius: 4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    @keyframes skeleton-pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    /* Premium Title Headings */
+    .team-section-title {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 2.85rem !important;
+      font-weight: 800 !important;
+      color: #000000 !important;
+      text-align: center !important;
+      letter-spacing: -0.5px !important;
+      margin-bottom: 50px !important;
+      position: relative !important;
+      text-transform: capitalize !important;
+      display: block !important;
+    }
+
+    .team-section-title::after {
+      content: '' !important;
+      display: block !important;
+      width: 60px !important;
+      height: 3px !important;
+      background: var(--primary) !important;
+      margin: 15px auto 0 !important;
+      border-radius: 2px !important;
+    }
+
+    /* Leadership styling */
+    .leadership-section {
+      padding: 80px 0;
+    }
+
+    .leadership-profile {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 80px;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .leadership-profile.alt-row {
+      flex-direction: row-reverse;
+    }
+
+    .leadership-photo-container {
+      flex-shrink: 0;
+    }
+
+    .leadership-photo {
+      width: 280px;
+      height: 280px;
+      background: rgba(214, 165, 89, 0.08);
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--primary);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .leadership-profile:hover .leadership-photo {
+      transform: scale(1.04) rotate(1.5deg);
+      border-color: #fff;
+      box-shadow: 0 20px 45px rgba(214, 165, 89, 0.25);
+    }
+
+    .leadership-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .leadership-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .leadership-name {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #000;
+      margin: 0 0 6px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .leadership-role {
+      font-family: 'Outfit', sans-serif !important;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 18px 0;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .leadership-bio {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: #334155;
+      margin-bottom: 25px;
+    }
+
+    .leadership-bio p {
+      margin-bottom: 12px;
+    }
+
+    .leadership-bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .leadership-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Department Section styling */
+    .dept-section {
+      padding: 70px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .dept-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 45px;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    .dept-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    /* Premium Outline CTA Button */
+    .team-cta-btn {
+      background: transparent !important;
+      border: 2px solid var(--primary) !important;
+      color: #0f172a !important;
+      padding: 8px 24px !important;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      border-radius: 50px !important;
+      cursor: pointer !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      outline: none !important;
+      margin-top: 15px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      text-decoration: none !important;
+    }
+
+    .team-cta-btn:hover {
+      background: var(--primary) !important;
+      color: #000 !important;
+      box-shadow: 0 6px 20px rgba(214, 165, 89, 0.25) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Team Member Card styling */
+    .team-card {
+      background: #faf6eb;
+      border: 1px solid rgba(214, 165, 89, 0.25);
+      border-radius: 20px;
+      padding: 40px 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.01);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      background: #ffffff;
+      box-shadow: 0 15px 35px rgba(214, 165, 89, 0.12);
+      border-color: rgba(214, 165, 89, 0.45);
+    }
+
+    .team-card-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      margin-bottom: 24px;
+      transition: all 0.4s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+    }
+
+    .team-card:hover .team-card-image {
+      transform: scale(1.04);
+    }
+
+    .team-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .team-card-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #000;
+      margin: 0 0 12px 0;
+    }
+
+    .team-card-role {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #000;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    .team-card-desc {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #64748b;
+      margin: 0 0 18px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 4.35em;
+    }
+
+    .team-card-socials {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    /* Shared Social Icon Buttons */
+    .team-social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .team-social-btn:hover {
+      background: var(--primary);
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* Media Overrides */
+    @media (max-width: 1024px) {
+      .dept-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      .leadership-profile {
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center !important;
+        margin-bottom: 60px !important;
+      }
+
+      .leadership-content {
+        text-align: center !important;
+      }
+
+      .leadership-photo {
+        width: 240px !important;
+        height: 240px !important;
+      }
+
+      .team-section-title {
+        font-size: 2.4rem !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dept-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .leadership-name {
+        font-size: 1.75rem !important;
+      }
+
+      .leadership-photo {
+        width: 200px !important;
+        height: 200px !important;
+      }
+
+      .team-section-title {
+        font-size: 2rem !important;
+        margin-bottom: 30px !important;
+      }
+
+      .modal-header-sec {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+      }
+
+      .modal-info {
+        text-align: center !important;
+      }
+
+      .modal-body {
+        padding: 25px 20px !important;
+      }
+
+      .profile-modal-content {
+        max-height: 90vh !important;
+        margin: 10px !important;
+        border-radius: 16px !important;
+      }
+
+      .profile-modal-close {
+        right: 15px !important;
+        top: 15px !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 18px !important;
+      }
+    }
+
+    /* Profile Modal CSS */
+    .profile-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .profile-modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .profile-modal-content {
+      background: #ffffff;
+      border: 1px solid rgba(214, 165, 89, 0.25);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 750px;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+      transform: scale(0.9);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      color: #0f172a;
+    }
+
+    .profile-modal-overlay.open .profile-modal-content {
+      transform: scale(1);
+    }
+
+    .profile-modal-close {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      background: rgba(214, 165, 89, 0.1);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #64748b;
+      cursor: pointer;
+      z-index: 10002;
+      transition: all 0.3s ease;
+    }
+
+    .profile-modal-close:hover {
+      background: #d6a559;
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 40px;
+    }
+
+    .modal-header-sec {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(214, 165, 89, 0.15);
+      padding-bottom: 25px;
+    }
+
+    .modal-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .modal-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-info {
+      flex: 1;
+    }
+
+    .modal-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 6px 0;
+    }
+
+    .modal-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .modal-dept {
+      font-size: 0.9rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .modal-sec-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-left: 3px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    .modal-sec {
+      margin-bottom: 30px;
+    }
+
+    .modal-sec:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-bio {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    .modal-bio p {
+      margin-bottom: 12px;
+    }
+
+    .modal-bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-bullets {
+      margin: 0;
+      padding-left: 20px;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .modal-bullets li {
+      margin-bottom: 8px;
+    }
+
+    .modal-bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-badge {
+      background: rgba(214, 165, 89, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(214, 165, 89, 0.2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      .modal-header-sec {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .modal-photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .modal-body {
+        padding: 25px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      const TEAM_API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+        ? "http://localhost:8080/api"
+        : "https://uwo-backend-977864306871.asia-south1.run.app/api";
+
+      let allTeamMembers = [];
+
+      function resolveImageUrl(imagePath) {
+        if (!imagePath) return '';
+        if (imagePath.includes('prateek-sharma')) return '/images/prateek-sharma..webp';
+        if (imagePath.includes('ayush-dubey')) return '/images/ayush-dubey..webp';
+        if (imagePath.includes('sandeep-yadav')) return '/images/sandeep-yadav..webp';
+        if (imagePath.includes('sukhmani-kaur')) return '/images/sukhmani-kaur..webp';
+        if (imagePath.includes('aman-kharare')) return '/images/aman-kharare..webp';
+        if (imagePath.includes('storage.googleapis.com/uwo-document/')) {
+          const objectPath = imagePath.split('storage.googleapis.com/uwo-document/')[1];
+          return TEAM_API_URL + '/media/' + objectPath;
+        }
+        if (imagePath.includes('/api/media/')) {
+          const mediaPath = imagePath.split('/api/media/')[1];
+          return TEAM_API_URL + '/media/' + mediaPath;
+        }
+        if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) return imagePath;
+        if (imagePath.startsWith('/uploads/')) {
+          return TEAM_API_URL.replace('/api', '') + imagePath;
+        }
+        if (imagePath.startsWith('images/') || imagePath.startsWith('/images/')) {
+          return imagePath.startsWith('/') ? imagePath : '/' + imagePath;
+        }
+        return '/' + imagePath.replace(/^\/+/, '');
+      }
+
+      const defaultAvatarSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" style="width:100%;height:100%;">
+        <circle cx="120" cy="120" r="120" fill="rgba(214,165,89,0.15)"/>
+        <circle cx="120" cy="95" r="40" fill="rgba(214,165,89,0.3)"/>
+        <ellipse cx="120" cy="175" rx="55" ry="40" fill="rgba(214,165,89,0.3)"/>
+      </svg>`;
+
+      window.handleTeamImageError = function (img) {
+        img.outerHTML = defaultAvatarSvg;
+      };
+
+      function getSocialsHtml(m) {
+        return '';
+      }
+
+      function getLeadershipSocialsHtml(m) {
+        return '';
+      }
+
+      async function loadTeam() {
+        const wrapper = document.getElementById('dynamic-team-wrapper');
+        try {
+          const response = await fetch(`${TEAM_API_URL}/team-members/public`);
+          if (!response.ok) throw new Error('Network error');
+          let members = await response.json();
+
+          // Explicitly exclude Bhumika Patel, Sakshi Jain, and Aman Patel
+          const excludedNames = ['bhumika patel', 'sakshi jain', 'aman patel'];
+          members = members.filter(m => {
+            const n = (m.name || '').toLowerCase().trim();
+            return !excludedNames.some(ex => n.includes(ex));
+          });
+
+          // Required members list to guarantee presence and clean photos
+          const requiredMembers = [
+            {
+              _id: '6a5e00699ddaa85d98cb10de',
+              name: 'MR. Prateek Sharma',
+              designation: 'Human Resources',
+              category: 'Finance',
+              is_leadership: false,
+              image: 'images/prateek-sharma..webp',
+              short_description: 'Strategic HR leader managing talent lifecycle, compliance, and employee success.',
+              full_biography: '<p>The Human Resources (HR) department plays a strategic role in building a skilled, engaged, and high-performing workforce. HR oversees the complete employee lifecycle—from talent acquisition and onboarding to performance management, learning &amp; development, payroll coordination, policy compliance, and employee relations. By fostering a culture of collaboration, transparency, and continuous growth, HR ensures that both employees and the organization achieve long-term success.</p>',
+              skills: ['Human Resources', 'Talent Acquisition', 'Employee Relations', 'Performance Management'],
+              experience: ['HR Management', 'Policy Compliance & Culture'],
+              achievements: []
+            },
+            {
+              _id: '6a55e1f67caa872f2ef0c81b',
+              name: 'Ayush Dubey',
+              designation: 'Business Development Associate',
+              category: 'Business Development',
+              is_leadership: false,
+              image: 'images/ayush-dubey..webp',
+              short_description: 'Ayush Dubey helps UWO to grow by identifying new business opportunities, generating leads, building client relationships, and supporting sales efforts. He is closely works with his Sales Team to convert leads into customers.',
+              full_biography: '<p>Ayush Dubey helps UWO to grow by identifying new business opportunities, generating leads, building client relationships, and supporting sales efforts. He is closely works with his Sales Team to convert leads into customers.</p>',
+              skills: ['Lead Generation', 'Client Relations', 'Sales Strategy', 'Market Expansion'],
+              experience: ['Business Development', 'Sales Execution'],
+              achievements: []
+            },
+            {
+              _id: '6a5e02f43a8cb2dea9839937',
+              name: 'Sandeep Yadav',
+              designation: 'Business Development Associate',
+              category: 'Business Development',
+              is_leadership: false,
+              image: 'images/sandeep-yadav..webp',
+              short_description: 'Sandeep helps UWO to grow by identifying new business opportunities, generating leads, building client relationships, and supporting sales efforts. He is closely works with his Sales Team to convert leads into customers.',
+              full_biography: '<p>Sandeep helps UWO to grow by identifying new business opportunities, generating leads, building client relationships, and supporting sales efforts. He is closely works with his Sales Team to convert leads into customers.</p>',
+              skills: ['Client Outreach', 'B2B Partnerships', 'Lead Conversion', 'Sales Pipeline'],
+              experience: ['Business Outreach', 'Client Growth'],
+              achievements: []
+            },
+            {
+              _id: '6a5e0f0c806e7889e3ea1c1d',
+              name: 'Sukhmani Kaur',
+              designation: 'Marketing Designer',
+              category: 'Design',
+              is_leadership: false,
+              image: 'images/sukhmani-kaur..webp',
+              short_description: 'Creates impactful visual designs and marketing assets that strengthen brand identity, engage audiences, and support business growth.',
+              full_biography: '<p>Creates impactful visual designs and marketing assets that strengthen brand identity, engage audiences, and support business growth.</p>',
+              skills: ['Visual Design', 'Brand Identity', 'Marketing Collateral', 'Digital Assets'],
+              experience: ['Graphic Design', 'Brand Marketing'],
+              achievements: []
+            },
+            {
+              _id: '6a5e0f46806e7889e3ea1c26',
+              name: 'Aman Kharare',
+              designation: 'Business Development Associate',
+              category: 'Business Development',
+              is_leadership: false,
+              image: 'images/aman-kharare..webp',
+              short_description: 'Drives business growth by identifying new opportunities, building strong client relationships, and supporting strategic partnerships.',
+              full_biography: '<p>Drives business growth by identifying new opportunities, building strong client relationships, and supporting strategic partnerships.</p>',
+              skills: ['Strategic Partnerships', 'Client Acquisition', 'Business Growth', 'Negotiations'],
+              experience: ['Corporate Partnerships', 'Business Development'],
+              achievements: []
+            }
+          ];
+
+          requiredMembers.forEach(reqMem => {
+            const idx = members.findIndex(m => (m.name || '').toLowerCase().includes(reqMem.name.toLowerCase()));
+            if (idx === -1) {
+              members.push(reqMem);
+            } else {
+              members[idx].image = reqMem.image;
+              if (!members[idx].designation) members[idx].designation = reqMem.designation;
+            }
+          });
+
+          // Ensure portrait images
+          members = members.map(m => {
+            const n = (m.name || '').toLowerCase();
+            if (n.includes('prateek sharma')) {
+              return { ...m, name: 'MR. Prateek Sharma', designation: 'Human Resources', image: 'images/prateek-sharma..webp' };
+            }
+            if (n.includes('ayush dubey')) {
+              return { ...m, name: 'Ayush Dubey', designation: 'Business Development Associate', image: 'images/ayush-dubey..webp' };
+            }
+            if (n.includes('sandeep yadav')) {
+              return { ...m, name: 'Sandeep Yadav', designation: 'Business Development Associate', image: 'images/sandeep-yadav..webp' };
+            }
+            if (n.includes('sukhmani kaur')) {
+              return { ...m, name: 'Sukhmani Kaur', designation: 'Marketing Designer', image: 'images/sukhmani-kaur..webp' };
+            }
+            if (n.includes('aman kharare')) {
+              return { ...m, name: 'Aman Kharare', designation: 'Business Development Associate', image: 'images/aman-kharare..webp' };
+            }
+            return m;
+          });
+
+          allTeamMembers = members;
+
+          if (!members || members.length === 0) {
+            wrapper.innerHTML = `
+              <section class="section section-gold">
+                <div class="container" style="text-align:center; padding: 100px 20px;">
+                  <h2 class="section-title">Our Team</h2>
+                  <p style="color:#64748b; font-size: 1.1rem; margin-top:20px;">Team information is currently being updated. Please check back soon.</p>
+                </div>
+              </section>`;
+            return;
+          }
+
+          // Filter groups
+          const leadership = members.filter(m => m.is_leadership);
+          const nonLeadership = members.filter(m => !m.is_leadership);
+
+          let newHtml = '';
+
+          // 1. Leadership Section
+          if (leadership.length > 0) {
+            let leadershipRows = leadership.map((m, idx) => {
+              const imgUrl = resolveImageUrl(m.image);
+              const isAlt = idx % 2 !== 0;
+              const imgHtml = imgUrl
+                ? `<img src="${imgUrl}" alt="${m.name}" onerror="handleTeamImageError(this)">`
+                : defaultAvatarSvg;
+
+              const bioContent = m.full_biography || (m.short_description ? `<p>${m.short_description}</p>` : '') || '<p>No details available.</p>';
+              const socials = getLeadershipSocialsHtml(m);
+
+              return `
+                <div class="leadership-profile scroll-reveal ${isAlt ? 'alt-row' : ''}">
+                  <div class="leadership-photo-container">
+                    <div class="leadership-photo">
+                      ${imgHtml}
+                    </div>
+                  </div>
+                  <div class="leadership-content">
+                    <h3 class="leadership-name">${m.name}</h3>
+                    <h4 class="leadership-role">${m.designation}</h4>
+                    <div class="leadership-bio">
+                      ${bioContent}
+                    </div>
+                    ${socials}
+                  </div>
+                </div>
+              `;
+            }).join('');
+
+            newHtml += `
+              <section class="section section-gold leadership-section">
+                <div class="container" style="max-width: 1100px;">
+                  <div style="text-align: center;">
+                    <h2 class="team-section-title scroll-reveal">Leadership Team</h2>
+                  </div>
+                  <div style="margin-top: 60px;">
+                    ${leadershipRows}
+                  </div>
+                </div>
+              </section>
+            `;
+          }
+
+          // 2. Non-Leadership Team Members (Single flat grid with cream background, no categories)
+          if (nonLeadership.length > 0) {
+            nonLeadership.sort((a, b) => a.display_order - b.display_order);
+
+            const cardsHtml = nonLeadership.map((m, index) => {
+              const imgUrl = resolveImageUrl(m.image);
+              const imgHtml = imgUrl
+                ? `<img src="${imgUrl}" alt="${m.name}" onerror="handleTeamImageError(this)">`
+                : defaultAvatarSvg;
+
+              return `
+                <div class="team-card scroll-reveal" onclick="openTeamModal('${m._id}')">
+                  <div class="team-card-image">
+                    ${imgHtml}
+                  </div>
+                  <h3 class="team-card-name">${m.name}</h3>
+                  <h4 class="team-card-role">${m.designation}</h4>
+                </div>
+              `;
+            }).join('');
+
+            newHtml += `
+              <section class="section section-gold dept-section" style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 50px; padding-bottom: 80px;">
+                <div class="container" style="max-width: 1200px;">
+                  <div style="text-align: center;">
+                    <h2 class="team-section-title scroll-reveal">Team Members</h2>
+                  </div>
+                  <div class="dept-grid">
+                    ${cardsHtml}
+                  </div>
+                </div>
+              </section>
+            `;
+          }
+
+          wrapper.innerHTML = newHtml;
+
+          // Initialize bidirectional scrolling engine (top-to-bottom & bottom-to-top)
+          initBidirectionalScroll();
+
+          // Re-initialize AOS if present
+          if (typeof AOS !== 'undefined') {
+            AOS.init({ once: false, mirror: true, offset: 50, duration: 800 });
+            AOS.refresh();
+          }
+
+        } catch (err) {
+          console.error('Error rendering team list:', err);
+          wrapper.innerHTML = `
+            <section class="section section-gold">
+              <div class="container" style="text-align:center; padding: 100px 20px;">
+                <h2 class="section-title">Our Team</h2>
+                <p style="color:#ef4444; font-size:1.1rem; margin-top:20px;"><i class="fas fa-exclamation-triangle"></i> Unable to load team details. Please try again later.</p>
+              </div>
+            </section>
+          `;
+        }
+      }
+
+      window.openTeamModal = function (id) {
+        const member = allTeamMembers.find(m => m._id === id);
+        if (!member) return;
+
+        const bodyContainer = document.getElementById('profile-modal-body-container');
+        if (!bodyContainer) return;
+
+        const imgUrl = resolveImageUrl(member.image);
+        const imgHtml = imgUrl
+          ? `<img src="${imgUrl}" alt="${member.name}" onerror="handleTeamImageError(this)">`
+          : defaultAvatarSvg;
+
+        // Render Biography/About
+        const bioContent = member.full_biography || (member.short_description ? `<p>${member.short_description}</p>` : '') || '<p>No detailed bio available.</p>';
+        const bioSec = `<div class="modal-sec"><h4 class="modal-sec-title">About</h4><div class="modal-bio">${bioContent}</div></div>`;
+
+        // Render Experience
+        let experienceSec = '';
+        if (member.experience && member.experience.length > 0) {
+          const bullets = member.experience.map(item => `<li>${item}</li>`).join('');
+          experienceSec = `<div class="modal-sec"><h4 class="modal-sec-title">Experience</h4><ul class="modal-bullets">${bullets}</ul></div>`;
+        }
+
+        // Render Skills
+        let skillsSec = '';
+        if (member.skills && member.skills.length > 0) {
+          const badges = member.skills.map(skill => `<span class="skill-badge">${skill}</span>`).join('');
+          skillsSec = `<div class="modal-sec"><h4 class="modal-sec-title">Skills</h4><div class="modal-skills-grid">${badges}</div></div>`;
+        }
+
+        // Render Achievements
+        let achievementsSec = '';
+        if (member.achievements && member.achievements.length > 0) {
+          const bullets = member.achievements.map(item => `<li>${item}</li>`).join('');
+          achievementsSec = `<div class="modal-sec"><h4 class="modal-sec-title">Achievements</h4><ul class="modal-bullets">${bullets}</ul></div>`;
+        }
+
+        bodyContainer.innerHTML = `
+          <div class="modal-header-sec">
+            <div class="modal-photo">
+              ${imgHtml}
+            </div>
+            <div class="modal-info">
+              <h3 class="modal-name">${member.name}</h3>
+              <h4 class="modal-role">${member.designation}</h4>
+              <div class="modal-dept">Department: ${member.category}</div>
+            </div>
+          </div>
+          ${bioSec}
+          ${experienceSec}
+          ${skillsSec}
+          ${achievementsSec}
+        `;
+
+        const modal = document.getElementById('teamProfileModal');
+        if (modal) modal.classList.add('open');
+        document.body.classList.add('modal-open');
+      };
+
+      window.closeTeamModal = function (event, force = false) {
+        if (force || event.target === event.currentTarget) {
+          const modal = document.getElementById('teamProfileModal');
+          if (modal) modal.classList.remove('open');
+          document.body.classList.remove('modal-open');
+        }
+      };
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          const modal = document.getElementById('teamProfileModal');
+          if (modal && modal.classList.contains('open')) {
+            modal.classList.remove('open');
+            document.body.classList.remove('modal-open');
+          }
+        }
+      });
+
+      function initBidirectionalScroll() {
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        let ticking = false;
+
+        function checkElements() {
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const isScrollingDown = currentScrollY >= lastScrollY;
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          const triggerOffset = 40;
+
+          const elements = document.querySelectorAll('.scroll-reveal');
+          elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const inView = rect.top < (viewportHeight - triggerOffset) && rect.bottom > triggerOffset;
+
+            if (inView) {
+              if (!el.classList.contains('is-visible')) {
+                if (!el.classList.contains('from-bottom') && !el.classList.contains('from-top')) {
+                  el.classList.add(isScrollingDown ? 'from-bottom' : 'from-top');
+                }
+                requestAnimationFrame(() => {
+                  el.classList.add('is-visible');
+                });
+              }
+            } else {
+              if (rect.top >= viewportHeight) {
+                el.classList.remove('is-visible', 'from-top');
+                el.classList.add('from-bottom');
+              } else if (rect.bottom <= 0) {
+                el.classList.remove('is-visible', 'from-bottom');
+                el.classList.add('from-top');
+              }
+            }
+          });
+
+          lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+        }
+
+        function onScroll() {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              checkElements();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+
+        checkElements();
+        setTimeout(checkElements, 80);
+        setTimeout(checkElements, 350);
+
+        window.removeEventListener('scroll', window.__uwoScrollHandler);
+        window.__uwoScrollHandler = onScroll;
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+      }
+
+      // Start loading
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTeam);
+      } else {
+        loadTeam();
+      }
+    })();
+  </script>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <!-- LEFT SIDE -->
+      <div class="footer-left">
+        <div class="social-links">
+          <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+            <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+          </a>
+          <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+            <img src="images/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+            <img src="images/facebook..webp" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+            title="Instagram">
+            <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+            title="LinkedIn">
+            <img src="images/linkedin..webp" alt="LinkedIn">
+          </a>
+          <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+            <img src="images/twitter..webp" alt="Twitter">
+          </a>
+          <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper"
+            title="Pinterest">
+            <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper"
+            title="Reddit">
+            <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper"
+            title="Quora">
+            <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+          </a>
+          <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper"
+            title="Medium">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+              <path
+                d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z"
+                fill="#ffffff" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+            title="YouTube">
+            <img src="images/youtube..webp" alt="YouTube">
+          </a>
+        </div>
+        <p style="margin-top: 15px; margin-bottom: 0;">UWO<sup>™</sup> - Unified Web Options & Services Pvt. Ltd. &copy;
+          2024</p>
+        <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9rem;">
+          <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+          <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+          <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+        </p>
+      </div>
+
+      <!-- D-U-N-S Registered™ Seal Wrapper -->
+      <div class="duns-seal-container"
+        style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+        <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+      </div>
+      <div style="display: none !important;">
+        <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="footer-right">
+        <h2 class="partner-heading">AISA<sup>™</sup> | AI Mall<sup>™</sup> | A-Series™</h2>
+        <div class="partner-logos-row">
+          <div class="logo-item"><img src="images/azure.png" alt="Azure" height="38"></div>
+          <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="38"></div>
+          <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="38"></div>
+          <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="38"></div>
+          <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="38"></div>
+          <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="38"></div>
+          <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="38"></div>
+        </div>
+        <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading Technology
+          providers <br> D-U-N-S® Registered™</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, mirror: true, offset: 50, duration: 800 });
+    // Mobile Drawer Logic handled by main.js
+  </script>
+
+  <!-- UWO Premium AI Chatbot Widget -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <div id="uwo-chatbot-widget">
+    <!-- Floating Toggle Button -->
+    <div class="chatbot-toggle-btn">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <!-- Main Chatbot Panel -->
+    <div class="chatbot-panel">
+      <!-- Header -->
+      <div class="chatbot-header">
+        <div class="bot-avatar">
+          <a href="admin.html">
+            <img src="images/uwo-logo.png" alt="UWO Logo">
+          </a>
+        </div>
+        <div class="header-info">
+          <h3>UWO<sup>™</sup> AI Assistant</h3>
+          <p>Always Intelligent</p>
+        </div>
+        <button class="chatbot-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Chat Area -->
+      <div class="chat-area">
+        <!-- Messages & Inline Email Form injected here -->
+      </div>
+
+      <!-- Input Bar -->
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+        <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="chatbot-send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <div class="powered-by">
+        Powered by UWO<sup>™</sup> Ecosystem
+      </div>
+    </div>
+  </div>
+  <!-- ================= PROFILE MODAL ================= -->
+  <div id="teamProfileModal" class="profile-modal-overlay" onclick="closeTeamModal(event)">
+    <div class="profile-modal-content" onclick="event.stopPropagation()">
+      <button class="profile-modal-close" onclick="closeTeamModal(event, true)">&times;</button>
+      <div id="profile-modal-body-container" class="modal-body">
+        <!-- Injected Dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="chatbot.js?v=1.1"></script>
+</body>
+
+</html>

@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISA&trade; | Immersive AI Super Assistant</title>
+    <link rel="icon" type="image/webp" href="images/uwo-logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=3.5">
+    <link rel="stylesheet" href="earn-refer.css?v=1.5">
+    <link rel="stylesheet" href="aisa.css">
+    <link rel="stylesheet" href="chatbot.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- JS LIBS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="demo-section.js" defer></script>
+    <script src="neural-hero.js" defer></script>
+    <script src="stacked-features.js" defer></script>
+    <script src="affiliate-tracker.js" defer></script>
+    <script src="stacked-cards.js" defer></script>
+    <script src="flowing-ai-creature.js" defer></script>
+
+    <script src="earn-refer.js?v=1.5"></script>
+    <script src="main.js?v=3.5" defer></script>
+    <style>
+        .mobile-drawer a,
+        .mobile-drawer .mobile-projects-toggle {
+            color: #000 !important;
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+        .mobile-projects a {
+            color: #555 !important;
+            opacity: 1 !important;
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xn9x5cied5");
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1072566655124889');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body class="aisa-page">
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+    /></noscript>
+
+    <!-- ================= PREMIUM LOADER ================= -->
+    <div id="aisa-loader"
+        style="position:fixed; inset:0; background:#000; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+        <div class="logo-text" style="display:flex; align-items:center; gap:12px;">
+            <img src="images/uwo-logo.png" alt="UWO<sup>&trade;</sup> Logo"
+                style="height:50px; opacity:1 !important; visibility:visible !important;">
+            <h1 style="color:white; font-size:1.6rem; letter-spacing:5px; margin:0;">AISA<sup>&trade;</sup></h1>
+        </div>
+        <div class="loader-bar">
+            <div class="loader-progress" id="loaderProgress"></div>
+        </div>
+    </div>
+
+    <!-- noise overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- ================= OVERLAY ================= -->
+    <div id="drawerOverlay" class="drawer-overlay" onclick="toggleDrawer()"></div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="window.location.href='index.html'"
+                style="display:flex; align-items:center; gap:8px;">
+                <img src="images/uwo-logo.png" alt="UWO<sup>&trade;</sup> Logo" style="height:55px;">
+                <span id="aisa-logo-text"
+                    style="color:#000; font-size:1.6rem; font-weight:900; letter-spacing:3px; line-height:1;">AISA<sup>&trade;</sup></span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+                <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+                <div class="projects-dropdown">
+                    <span class="projects-link active">Our Projects &#9662;</span>
+                    <div class="projects-menu">
+                        <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+                        <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+                        <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+                        <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+                    </div>
+                </div>
+                <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+                <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+                <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+                  <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+                </button>
+            </nav>
+            <!-- MOBILE ICON -->
+            <div class="hamburger" onclick="toggleDrawer()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MOBILE DRAWER (Sidebar) ================= -->
+    <div id="mobileDrawer" class="mobile-drawer">
+        <div class="mobile-drawer-header">
+            <div class="mobile-drawer-logo">
+                <img src="images/aisa-logo.svg" alt="AISA Logo" style="height:45px;">
+            </div>
+            <div class="mobile-drawer-close" onclick="toggleDrawer()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <a href="index.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+
+        <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+            Our Projects <span>&#9662;</span>
+        </div>
+
+        <div id="mobileProjects" class="mobile-projects">
+            <a href="aisa.html" class="active" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+            <a href="/aisa-connect/" target="_blank" onclick="toggleDrawer()" rel="noopener noreferrer">AISA Connect</a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+            <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+        </div>
+
+        <a href="our-team.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+            <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+        </a>
+    </div>
+
+    <!-- ================= PRIMARY HERO SECTION ================= -->
+    <section class="aisa-hero" id="hero-primary"
+        style="position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; background:#04040e;">
+
+        <!-- Background: Deep Gradient Space -->
+        <div id="hero-background-gradient"
+            style="position:absolute; inset:0; background:radial-gradient(ellipse 120% 80% at 50% 50%, #0c0018 0%, #04040e 100%); z-index:0;">
+        </div>
+
+        <!-- Immersive Glowing Lights -->
+        <div class="hero-immersive-glows" style="position:absolute; inset:0; z-index:0; pointer-events:none;">
+            <div
+                style="position:absolute; top:5%; left:10%; width:45vw; height:45vw; background:radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 75%); filter:blur(80px); animation:float-glow 8s infinite alternate;">
+            </div>
+            <div
+                style="position:absolute; bottom:5%; right:10%; width:50vw; height:50vw; background:radial-gradient(circle, rgba(236,72,153,0.14) 0%, transparent 75%); filter:blur(100px); animation:float-glow 10s infinite alternate-reverse;">
+            </div>
+        </div>
+
+        <!-- 3D Neural Scene -->
+        <div style="position:absolute; inset:0; z-index:1;">
+            <canvas id="hero-neural-canvas"
+                style="position:absolute; inset:0; z-index:1; pointer-events:none;"></canvas>
+        </div>
+
+        <!-- Central Immersive Glow Ring -->
+        <div id="hero-center-ring"
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:500px; height:500px; border-radius:50%; border:1px solid rgba(99, 102, 241, 0.1); background:radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%); z-index:1; pointer-events:none; box-shadow:0 0 100px rgba(99, 102, 241, 0.1);">
+        </div>
+
+        <!-- Foreground Content -->
+        <div class="aisa-hero-content"
+            style="position:relative; z-index:10; text-align:center; max-width:1000px; padding:clamp(80px, 15vh, 140px) 1.5rem clamp(40px, 10vh, 80px); transform:translateY(-20px);">
+
+            <div class="hero-badge"
+                style="display:inline-flex; align-items:center; gap:10px; padding:8px 20px; border-radius:999px; background:rgba(99, 102, 241, 0.12); border:1px solid rgba(99, 102, 241, 0.4); color:#a5b4fc; font-size:0.85rem; font-weight:700; margin-bottom:2.5rem; letter-spacing:0.1em;">
+                <i class="fa-solid fa-sparkles" style="color:#818cf8;"></i> Powered by UWO<sup>&trade;</sup>
+            </div>
+
+            <!-- Heading Reveal -->
+            <div style="overflow:visible;">
+                <h1 class="hero-heading"
+                    style="font-size:clamp(3rem, 9vw, 5.5rem); font-weight:900; color:#fff; line-height:1.1; letter-spacing:-0.05em; margin-bottom:2rem; text-align:center; display:flex; flex-direction:column; align-items:center;">
+                    <div style="display:flex; justify-content:center;">Meet&nbsp;AISA<sup>&trade;</sup></div>
+                    <div style="display:flex; justify-content:center; position:relative;">
+                        <span
+                            style="background:linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #e879f9 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">your
+                            AI Super Assistant</span>
+                        <div class="hero-text-glow"
+                            style="position:absolute; inset:-10% -20%; background:linear-gradient(90deg, #3b82f6 0%, #d946ef 100%); filter:blur(50px); z-index:-1; pointer-events:none; opacity:0;">
+                        </div>
+                    </div>
+                </h1>
+            </div>
+
+            <p class="subtitle"
+                style="font-size:clamp(1.1rem, 2.5vw, 1.35rem); color:rgba(203, 213, 225, 0.85); max-width:720px; margin:0 auto 2.2rem; line-height:1.7; font-weight:400;">
+                The AI Super Assistant that unifies your entire digital world into one intelligent platform.
+            </p>
+
+            <div class="aisa-cta-group" style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+                <a href="https://aisa24.com" target="_blank"
+                    style="padding:16px 42px; border-radius:16px; border:none; background:linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color:#fff; font-weight:800; font-size:1.1rem; cursor:pointer; box-shadow:0 20px 50px rgba(99, 102, 241, 0.4); display:flex; align-items:center; gap:12px; transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration:none;">
+                    Get Early Access <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="javascript:void(0)" onclick="openDemoModal(event)"
+                    style="padding:16px 42px; border-radius:16px; background:rgba(255, 255, 255, 0.06); border:1px solid rgba(255, 255, 255, 0.2); color:#fff; font-weight:800; font-size:1.1rem; cursor:pointer; backdrop-filter:blur(20px); transition:all 0.4s ease; text-decoration:none;">
+                    Request Demo
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator"
+            style="position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);">
+            <div
+                style="width:32px; height:54px; border-radius:16px; border:1.5px solid rgba(255,255,255,0.4); display:flex; justify-content:center; padding:8px;">
+                <div
+                    style="width:4px; height:10px; background:#fff; border-radius:2px; animation: hero-scroll-wheel 2.5s infinite;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Styles for Hero Animation -->
+    <style>
+        @keyframes float-glow {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(5%, 5%) scale(1.1);
+            }
+        }
+
+        @keyframes hero-scroll-wheel {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- ================= STACKED FEATURES ================= -->
+    <div id="stacked-features-root"></div>
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+
+    <!-- ================= STACKED CARDS (Built for the AI Era) ================= -->
+    <div id="stacked-cards-root"></div>
+
+    <!-- ================= BENEFITS SECTION ================= -->
+    <section style="background:#010d1a; position:relative;">
+        <div class="container">
+            <div class="section-head">
+                <h2>Unlock <span style="color:var(--aisa-gold);">Unprecedented</span><br>Efficiency &amp; Creativity.
+                </h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Reclaim Your Time</h3>
+                    <p>Cut hours from your workday. AISA<sup>&trade;</sup> handles the heavy lifting, giving you back precious time for
+                        what truly matters.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Amplify Your Productivity</h3>
+                    <p>Boost your output and achieve more with less effort, every single day, across every task.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Simplify Your Digital Life</h3>
+                    <p>One intuitive interface for every AI need means less complexity and more clarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ================= TRUST SECTION ================= -->
+    <section style="background:#020617; position:relative; overflow:hidden;">
+        <div class="glow-spot"
+            style="top:50%; left:50%; transform:translate(-50%,-50%); width:60vw; height:60vh; background:radial-gradient(circle, rgba(214,165,89,0.07) 0%, transparent 70%);">
+        </div>
+        <div class="container" style="position:relative; z-index:5; text-align:center;">
+            <div
+                style="display:inline-flex; align-items:center; gap:12px; background:rgba(214,165,89,0.1); border:1px solid rgba(214,165,89,0.3); border-radius:50px; padding:10px 24px; margin-bottom:40px;">
+                <i class="fa-solid fa-shield-halved" style="color:var(--aisa-gold);"></i>
+                <span style="color:var(--aisa-gold); font-size:0.9rem; font-weight:600; letter-spacing:1px;">TRUSTED
+                    INNOVATION</span>
+            </div>
+            <h2 style="font-size:clamp(2rem,4vw,3.2rem); line-height:1.2; margin-bottom:30px;">Innovation You Can
+                Trust,<br><span style="color:var(--aisa-gold);">Backed by Proven Expertise.</span></h2>
+            <p style="font-size:1.1rem; color:rgba(255,255,255,0.7); max-width:720px; margin:0 auto; line-height:1.8;">
+                AISA<sup>&trade;</sup> is the flagship AI innovation from <strong style="color:#fff;">UWO<sup>&trade;</sup> (Unified Web Options &amp;
+                    Services Pvt. Ltd.)</strong>, an IT-registered technology company founded in 2020 in Jabalpur,
+                India. As pioneers in AI solutions and business automation, we're building a future where AI empowers
+                everyone, simply and securely. Our commitment to innovation drives a robust AI ecosystem designed for
+                your success.</p>
+        </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section style="text-align:center; background:#020617; position:relative; overflow:hidden;">
+        <div class="glow-spot"
+            style="top:50%; left:50%; transform:translate(-50%, -50%); width:80vw; height:80vh; background:radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%);">
+        </div>
+        <div class="container" style="position:relative; z-index:5;">
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); line-height:1.1;">Your Future of Productivity<br><span
+                    style="color:var(--aisa-gold);">Starts Now.</span></h1>
+            <p
+                style="font-size:1.2rem; color:rgba(255,255,255,0.6); margin: 30px auto 50px; max-width:640px; line-height:1.8;">
+                Ready to experience the future of work? Unify your potential, eliminate complexity, and redefine what's
+                possible with AISA<sup>&trade;</sup>.</p>
+            <div class="btn-wrapper">
+                <a href="https://aisa24.com" target="_blank" class="aisa-btn-premium aisa-btn-gradient magnetic"
+                    data-strength="50"
+                    style="padding: 12px 28px; font-size:14px; text-transform: none !important; text-decoration: none;">Get
+                    Early Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- LEFT SIDE -->
+            <div class="footer-left">
+                <div class="social-links">
+                    <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+                        <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+                    </a>
+                    <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+                        <img src="images/whatsapp.svg" alt="WhatsApp">
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+                        <img src="images/facebook..webp" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+                        title="Instagram">
+                        <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+                    </a>
+                    <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+                        title="LinkedIn">
+                        <img src="images/linkedin..webp" alt="LinkedIn">
+                    </a>
+                    <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+                        <img src="images/twitter..webp" alt="Twitter">
+                    </a>
+                    <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper" title="Pinterest">
+                        <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+                    </a>
+                    <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper" title="Reddit">
+                        <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+                    </a>
+                    <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper" title="Quora">
+                        <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+                    </a>
+                    <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper" title="Medium">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+                            <path d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z" fill="#ffffff"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank"
+                        class="social-icon-wrapper" title="YouTube">
+                        <img src="images/youtube..webp" alt="YouTube">
+                    </a>
+                </div>
+                <p style="margin-top: 15px; margin-bottom: 0;">AISA<sup>&trade;</sup> &copy; 2024 | Powered by UWO<sup>&trade;</sup> Universal Ecosystem</p>
+                <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9rem;">
+                  <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+                  <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+                  <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+                </p>
+            </div>
+
+            <!-- D-U-N-S Registered™ Seal Wrapper -->
+            <div class="duns-seal-container" style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+              <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+            </div>
+            <div style="display: none !important;">
+              <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="footer-right">
+                <h2 class="partner-heading">AISA<sup>&trade;</sup> | AI Mall<sup>&trade;</sup> | A-Series&trade;</h2>
+                <div class="partner-logos-row">
+                    <div class="logo-item"><img src="images/azure.png" alt="Azure" height="38"></div>
+                    <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="38"></div>
+                    <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="38"></div>
+                    <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="38"></div>
+                    <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="38"></div>
+                    <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="38"></div>
+                    <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="38"></div>
+                </div>
+                <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading Technology
+                    providers <br> D-U-N-S® Registered™</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ================= DEMO MODAL ================= -->
+    <div class="aisa-modal-backdrop" id="demoModal" onclick="closeDemoModal()">
+        <div class="aisa-modal-content" onclick="event.stopPropagation()">
+            <button class="aisa-modal-close" onclick="closeDemoModal()">&times;</button>
+            <div class="demo-form" id="demoForm">
+                <h2>Request a Demo</h2>
+                <p>Experience the future of AI firsthand. Our experts will guide you through the AISA<sup>&trade;</sup> ecosystem.</p>
+
+                <form id="aisaDemoForm" onsubmit="handleDemoSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="demoName" placeholder=" " required>
+                        <label>Full Name*</label>
+                        <div class="error-msg" id="err-demoName">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="demoEmail" placeholder=" " required>
+                        <label>Email Address*</label>
+                        <div class="error-msg" id="err-demoEmail">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="demoPhone" placeholder=" ">
+                            <label>Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="demoCompany" placeholder=" ">
+                            <label>Company Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="demoMessage" rows="3" placeholder=" " required></textarea>
+                        <label>How can we help?*</label>
+                        <div class="error-msg" id="err-demoMessage">Please tell us about your use case</div>
+                    </div>
+
+                    <button type="submit" class="aisa-btn-premium aisa-btn-gradient aisa-btn-submit" id="submitBtn">
+                        <span>Send Request</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- SUCCESS OVERLAY -->
+            <div class="success-overlay" id="successOverlay">
+                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                <h2 style="color:#fff;">Request Received!</h2>
+                <p style="color:rgba(255,255,255,0.7);">Thank you! Our team will contact you shortly to schedule your
+                    AISA<sup>&trade;</sup> walkthrough.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ANIMATIONS ================= -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- LOADER ---
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+            tl.to("#loaderProgress", { width: "100%", duration: 1.5, ease: "power4.inOut" })
+                .to("#aisa-loader", { opacity: 0, duration: 0.8, ease: "power2.inOut" })
+                .call(() => { document.getElementById('aisa-loader').remove(); })
+                .call(initAnimations);
+        });
+
+        function initAnimations() {
+            // Hero Reveal
+            gsap.to(".hero-heading", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+            gsap.to(".subtitle", { opacity: 1, duration: 1, delay: 0.5 });
+            gsap.to(".aisa-cta-group", { opacity: 1, duration: 1, delay: 0.8 });
+
+            // Magnetic Buttons
+            const magneticButtons = document.querySelectorAll('.magnetic');
+            magneticButtons.forEach(btn => {
+                btn.addEventListener('mousemove', function (e) {
+                    const strength = this.getAttribute('data-strength') || 30;
+                    const bound = this.getBoundingClientRect();
+                    const centerX = bound.left + bound.width / 2;
+                    const centerY = bound.top + bound.height / 2;
+                    const moveX = (e.clientX - centerX) / (bound.width / strength);
+                    const moveY = (e.clientY - centerY) / (bound.height / strength);
+                    gsap.to(this, { x: moveX, y: moveY, duration: 0.3, ease: "power2.out" });
+                });
+                btn.addEventListener('mouseleave', function () {
+                    gsap.to(this, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
+                });
+            });
+
+            // Section Reveals
+            document.querySelectorAll('.reveal-head').forEach(head => {
+                gsap.from(head, {
+                    scrollTrigger: head,
+                    opacity: 0, y: 50, duration: 1, ease: "power3.out"
+                });
+            });
+
+            // Problem Stagger
+            gsap.from(".stagger-card", {
+                scrollTrigger: {
+                    trigger: ".problem-grid",
+                    start: "top 80%"
+                },
+                opacity: 0, x: -30, stagger: 0.2, duration: 1, ease: "power2.out"
+            });
+
+            // Timeline Animation
+            gsap.to("#timelineBar", {
+                scrollTrigger: {
+                    trigger: ".timeline",
+                    start: "top 70%",
+                    end: "bottom 80%",
+                    scrub: 1
+                },
+                width: "90%"
+            });
+
+            // Activate Demo Section
+            if (typeof DemoSectionMain === 'function') {
+                DemoSectionMain();
+            }
+
+            // Final refresh to lock in positions
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 1000);
+        }
+
+        // --- NEURAL CANVAS ---
+        const canvas = document.getElementById('neural-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let points = [];
+            let mouse = { x: null, y: null };
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            class Point {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.originX = this.x;
+                    this.originY = this.y;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                }
+                update() {
+                    // Return to origin or float
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Boundaries
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                    // React to mouse
+                    if (mouse.x) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < 150) {
+                            this.x -= dx * 0.01;
+                            this.y -= dy * 0.01;
+                        }
+                    }
+                }
+            }
+
+            resize();
+            for (let i = 0; i < 100; i++) points.push(new Point());
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'rgba(0, 242, 255, 0.1)';
+                ctx.lineWidth = 0.5;
+
+                points.forEach((p, i) => {
+                    p.update();
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(0, 242, 255, 0.4)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < points.length; j++) {
+                        const p2 = points[j];
+                        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                        if (dist < 180) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+        }
+
+        // --- CARD TILT ---
+        function handleTilt(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--x', `${x}px`);
+            card.style.setProperty('--y', `${y}px`);
+
+            const rotateX = -((y - rect.height / 2) / 20);
+            const rotateY = (x - rect.width / 2) / 20;
+            gsap.to(card, { rotateX, rotateY, duration: 0.5, ease: "power2.out" });
+        }
+        document.querySelectorAll('.solution-card').forEach(card => {
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { rotateX: 0, rotateY: 0, duration: 1, ease: "elastic.out(1, 0.3)" });
+            });
+        });
+
+        // --- MODAL CONTROL ---
+        function openDemoModal(e) {
+            console.log("AISA: Opening Demo Modal...");
+            if (e) e.preventDefault();
+            const modal = document.getElementById('demoModal');
+            const content = modal.querySelector('.aisa-modal-content');
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Kill any old animations to prevent state conflicts
+            gsap.killTweensOf(content);
+
+            // Force reset and then animate in
+            gsap.fromTo(content,
+                { scale: 0.8, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)", immediateRender: true }
+            );
+        }
+
+        function closeDemoModal() {
+            console.log("AISA: Closing Demo Modal...");
+            const modal = document.getElementById('demoModal');
+            const content = modal.querySelector('.aisa-modal-content');
+
+            gsap.to(content, {
+                scale: 0.8, opacity: 0, duration: 0.3, onComplete: () => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    // Always reset form/success state for next open
+                    document.getElementById('demoForm').style.display = 'block';
+                    document.getElementById('successOverlay').style.display = 'none';
+                }
+            });
+        }
+
+        // Close on escape
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDemoModal(); });
+
+        async function handleDemoSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const originalBtnHtml = btn.innerHTML;
+
+            // Basic Validation
+            const name = document.getElementById('demoName').value.trim();
+            const email = document.getElementById('demoEmail').value.trim();
+            const message = document.getElementById('demoMessage').value.trim();
+
+            let hasError = false;
+            document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+
+            if (!name) { document.getElementById('err-demoName').style.display = 'block'; hasError = true; }
+            if (!email || !email.includes('@')) { document.getElementById('err-demoEmail').style.display = 'block'; hasError = true; }
+            if (!message) { document.getElementById('err-demoMessage').style.display = 'block'; hasError = true; }
+
+            if (hasError) return;
+
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Processing...';
+
+            try {
+                const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                    ? "http://localhost:8080/api"
+                    : "https://uwo-backend-977864306871.asia-south1.run.app/api";
+
+                const affiliateCode = localStorage.getItem('uwo_affiliate_code') || '';
+
+                const response = await fetch(`${API_URL}/aisa-demo`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone: document.getElementById('demoPhone').value,
+                        company: document.getElementById('demoCompany').value,
+                        message,
+                        affiliateCode
+                    })
+                });
+
+                if (response.ok) {
+                    if (window.trackAffiliateLogin) {
+                        window.trackAffiliateLogin(email, name);
+                    }
+                    // Success
+                    document.getElementById('demoForm').style.display = 'none';
+                    document.getElementById('successOverlay').style.display = 'flex';
+                    gsap.from("#successOverlay", { opacity: 0, y: 20, duration: 0.5 });
+
+                    // Reset and auto-close
+                    document.getElementById('aisaDemoForm').reset();
+                    setTimeout(closeDemoModal, 4000);
+                } else {
+                    alert("Submission failed. Please try again.");
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Connection error. Is the backend running?");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalBtnHtml;
+            }
+        }
+        function toggleMobileProjects() {
+            const menu = document.getElementById("mobileProjects");
+            menu.classList.toggle("open");
+        }
+    </script>
+
+    <!-- ================= THREE.JS SOLUTION 3D INIT ================= -->
+    <script>
+        (function () {
+            'use strict';
+            const section = document.getElementById('solution-3d');
+            const canvas = document.getElementById('solutionCanvas');
+            if (!section || !canvas || typeof THREE === 'undefined') return;
+
+            let W = section.clientWidth, H = section.clientHeight;
+
+            // --- SCENE ---
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x020617);
+            scene.fog = new THREE.Fog(0x020617, 14, 28);
+
+            const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 100);
+            camera.position.set(0, 0, 10);
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+            renderer.setSize(W, H);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+
+            // --- LIGHTS ---
+            scene.add(new THREE.AmbientLight(0x0a1030, 5));
+
+            const cyanLight = new THREE.PointLight(0x00f2ff, 4, 20);
+            cyanLight.position.set(-6, 4, 6);
+            scene.add(cyanLight);
+
+            const goldLight = new THREE.PointLight(0xd6a559, 3, 20);
+            goldLight.position.set(6, -3, 6);
+            scene.add(goldLight);
+
+            const purpleLight = new THREE.PointLight(0x7c3aed, 2, 15);
+            purpleLight.position.set(0, 0, 8);
+            scene.add(purpleLight);
+
+            // --- PARTICLES ---
+            const PCOUNT = 1800;
+            const pPos = new Float32Array(PCOUNT * 3);
+            for (let i = 0; i < PCOUNT; i++) {
+                pPos[i * 3] = (Math.random() - 0.5) * 32;
+                pPos[i * 3 + 1] = (Math.random() - 0.5) * 22;
+                pPos[i * 3 + 2] = (Math.random() - 0.5) * 18 - 3;
+            }
+            const pGeo = new THREE.BufferGeometry();
+            pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            const pMat = new THREE.PointsMaterial({ color: 0x00ccff, size: 0.035, transparent: true, opacity: 0.55 });
+            const particles = new THREE.Points(pGeo, pMat);
+            scene.add(particles);
+
+            // --- GRID FLOOR ---
+            const grid = new THREE.GridHelper(40, 40, 0x003355, 0x001122);
+            grid.position.y = -4;
+            grid.material.opacity = 0.35;
+            grid.material.transparent = true;
+            scene.add(grid);
+
+            // --- FEATURES DATA ---
+            const features = [
+                { emoji: '??', title: 'IMAGE GENERATION', desc: 'Bring your visions to life. Instantly create stunning visuals from text.', color: '#00f2ff', hex: 0x00f2ff, pos: [-3.4, 1.5, 0] },
+                { emoji: '??', title: 'VIDEO GENERATION', desc: 'Produce captivating videos with a few clicks. From concept to creation.', color: '#a855f7', hex: 0xa855f7, pos: [0, 1.5, -0.4] },
+                { emoji: '??', title: 'AI CHAT', desc: 'Engage in intelligent conversations. Get instant answers and insights.', color: '#22c55e', hex: 0x22c55e, pos: [3.4, 1.5, 0] },
+                { emoji: '??', title: 'DEEP RESEARCH', desc: 'Dive deep into any topic. AISA sifts through vast data for you.', color: '#f59e0b', hex: 0xf59e0b, pos: [-3.4, -1.5, -0.4] },
+                { emoji: '??', title: 'DOCUMENT CONVERSION', desc: 'Seamlessly transform files. Convert PDFs and docs with unparalleled accuracy.', color: '#f97316', hex: 0xf97316, pos: [0, -1.5, 0] },
+                { emoji: '??', title: 'WORKFLOW AUTOMATION', desc: 'Automate repetitive tasks. Let AISA handle the busy work you focus on growth.', color: '#ef4444', hex: 0xef4444, pos: [3.4, -1.5, -0.4] },
+            ];
+
+            // --- ROUNDED RECT HELPER (canvas 2D) ---
+            function rRect(ctx, x, y, w, h, r) {
+                ctx.beginPath();
+                ctx.moveTo(x + r, y);
+                ctx.lineTo(x + w - r, y);
+                ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+                ctx.lineTo(x + w, y + h - r);
+                ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+                ctx.lineTo(x + r, y + h);
+                ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+                ctx.lineTo(x, y + r);
+                ctx.quadraticCurveTo(x, y, x + r, y);
+                ctx.closePath();
+            }
+
+            // --- CREATE CARD CANVAS TEXTURE ---
+            function makeCardTexture(f) {
+                const cv = document.createElement('canvas');
+                cv.width = 512; cv.height = 320;
+                const ctx = cv.getContext('2d');
+
+                // Glass BG
+                const bg = ctx.createLinearGradient(0, 0, 512, 320);
+                bg.addColorStop(0, 'rgba(15,23,60,0.92)');
+                bg.addColorStop(1, 'rgba(2,6,23,0.97)');
+                rRect(ctx, 0, 0, 512, 320, 22);
+                ctx.fillStyle = bg;
+                ctx.fill();
+
+                // Top glow strip
+                const topGlow = ctx.createLinearGradient(0, 0, 512, 0);
+                topGlow.addColorStop(0, 'transparent');
+                topGlow.addColorStop(0.5, f.color + '55');
+                topGlow.addColorStop(1, 'transparent');
+                ctx.fillStyle = topGlow;
+                ctx.fillRect(0, 0, 512, 2);
+
+                // Border
+                rRect(ctx, 1, 1, 510, 318, 22);
+                ctx.strokeStyle = f.color + '66';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                // Inner highlight
+                rRect(ctx, 8, 8, 496, 100, 14);
+                const shine = ctx.createLinearGradient(0, 0, 0, 100);
+                shine.addColorStop(0, 'rgba(255,255,255,0.06)');
+                shine.addColorStop(1, 'rgba(255,255,255,0)');
+                ctx.fillStyle = shine;
+                ctx.fill();
+
+                // Emoji icon
+                ctx.font = '68px serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(f.emoji, 256, 108);
+
+                // Title
+                ctx.font = 'bold 30px "Arial", sans-serif';
+                ctx.fillStyle = f.color;
+                ctx.letterSpacing = '2px';
+                ctx.fillText(f.title, 256, 170);
+
+                // Divider
+                ctx.beginPath();
+                ctx.moveTo(130, 190); ctx.lineTo(382, 190);
+                ctx.strokeStyle = f.color + '44';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Description
+                ctx.font = '19px "Arial", sans-serif';
+                ctx.fillStyle = 'rgba(255,255,255,0.7)';
+                // Word-wrap
+                const words = f.desc.split(' ');
+                let line = '';
+                let y = 222;
+                for (let n = 0; n < words.length; n++) {
+                    const test = line + words[n] + ' ';
+                    if (ctx.measureText(test).width > 440 && n > 0) {
+                        ctx.fillText(line, 256, y);
+                        line = words[n] + ' ';
+                        y += 26;
+                    } else {
+                        line = test;
+                    }
+                }
+                ctx.fillText(line, 256, y);
+
+                return new THREE.CanvasTexture(cv);
+            }
+
+            // --- BUILD CARDS ---
+            const cards = [];
+            const meshes = [];
+            features.forEach((f, i) => {
+                const tex = makeCardTexture(f);
+                const geo = new THREE.PlaneGeometry(2.9, 1.8);
+                const mat = new THREE.MeshStandardMaterial({
+                    map: tex, transparent: true, opacity: 0.97,
+                    roughness: 0.15, metalness: 0.2
+                });
+                const mesh = new THREE.Mesh(geo, mat);
+                mesh.position.set(...f.pos);
+                mesh.userData = { idx: i, origPos: [...f.pos], feature: f };
+                // Slight 3D angle
+                mesh.rotation.y = i < 3 ? -0.08 : 0.08;
+                if (i % 3 === 1) mesh.rotation.x = 0.04;
+                scene.add(mesh);
+                meshes.push(mesh);
+
+                // Glow halo
+                const halo = new THREE.Mesh(
+                    new THREE.PlaneGeometry(3.3, 2.1),
+                    new THREE.MeshBasicMaterial({ color: f.hex, transparent: true, opacity: 0.04, side: THREE.DoubleSide })
+                );
+                halo.position.set(f.pos[0], f.pos[1], f.pos[2] - 0.05);
+                halo.rotation.copy(mesh.rotation);
+                scene.add(halo);
+
+                cards.push({ mesh, halo, feature: f, idx: i });
+            });
+
+            // --- RAYCASTER & MOUSE ---
+            const ray = new THREE.Raycaster();
+            const mouse = new THREE.Vector2(-9, -9);
+            let mouseX = 0, mouseY = 0;
+            let activeIdx = -1;
+            const fi = document.getElementById('featureInfo');
+
+            function onMouseMove(e) {
+                const rect = section.getBoundingClientRect();
+                mouse.x = ((e.clientX - rect.left) / W) * 2 - 1;
+                mouse.y = -((e.clientY - rect.top) / H) * 2 + 1;
+                mouseX = mouse.x; mouseY = mouse.y;
+
+                ray.setFromCamera(mouse, camera);
+                const hits = ray.intersectObjects(meshes);
+
+                if (hits.length > 0) {
+                    const hitMesh = hits[0].object;
+                    const idx = hitMesh.userData.idx;
+                    if (idx !== activeIdx) {
+                        activeIdx = idx;
+                        cards.forEach((c, i) => {
+                            const isActive = i === activeIdx;
+                            if (typeof gsap !== 'undefined') {
+                                gsap.to(c.mesh.position, { z: isActive ? c.feature.pos[2] + 1.8 : c.feature.pos[2], duration: 0.55, ease: 'power3.out' });
+                                gsap.to(c.mesh.material, { opacity: isActive ? 1 : 0.35, duration: 0.3 });
+                                gsap.to(c.halo.material, { opacity: isActive ? 0.18 : 0.04, duration: 0.3 });
+                                gsap.to(c.mesh.scale, { x: isActive ? 1.05 : 1, y: isActive ? 1.05 : 1, duration: 0.35 });
+                            }
+                        });
+                        // Update info panel
+                        if (fi) {
+                            const feat = hitMesh.userData.feature;
+                            document.getElementById('fi-icon').textContent = feat.emoji;
+                            document.getElementById('fi-title').textContent = feat.title;
+                            document.getElementById('fi-title').style.color = feat.color;
+                            document.getElementById('fi-desc').textContent = feat.desc;
+                            fi.style.borderColor = feat.color + '55';
+                            gsap && gsap.to(fi, { opacity: 1, y: 0, duration: 0.3 });
+                        }
+                        section.style.cursor = 'pointer';
+                    }
+                } else if (activeIdx !== -1) {
+                    activeIdx = -1;
+                    cards.forEach(c => {
+                        if (typeof gsap !== 'undefined') {
+                            gsap.to(c.mesh.position, { z: c.feature.pos[2], duration: 0.6, ease: 'power3.out' });
+                            gsap.to(c.mesh.material, { opacity: 0.97, duration: 0.4 });
+                            gsap.to(c.halo.material, { opacity: 0.04, duration: 0.4 });
+                            gsap.to(c.mesh.scale, { x: 1, y: 1, duration: 0.35 });
+                        }
+                    });
+                    if (fi) gsap && gsap.to(fi, { opacity: 0, duration: 0.25 });
+                    section.style.cursor = 'default';
+                }
+            }
+
+            section.addEventListener('mousemove', onMouseMove);
+            section.addEventListener('mouseleave', () => {
+                activeIdx = -1;
+                cards.forEach(c => {
+                    gsap && gsap.to(c.mesh.position, { z: c.feature.pos[2], duration: 0.6 });
+                    gsap && gsap.to(c.mesh.material, { opacity: 0.97, duration: 0.4 });
+                    gsap && gsap.to(c.halo.material, { opacity: 0.04, duration: 0.4 });
+                    gsap && gsap.to(c.mesh.scale, { x: 1, y: 1, duration: 0.35 });
+                });
+                if (fi) gsap && gsap.to(fi, { opacity: 0, duration: 0.25 });
+                mouseX = 0; mouseY = 0;
+            });
+
+            // --- ANIMATION LOOP ---
+            let t = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                t += 0.008;
+
+                // Camera parallax
+                camera.position.x += (mouseX * 0.6 - camera.position.x) * 0.04;
+                camera.position.y += (mouseY * 0.35 - camera.position.y) * 0.04;
+                camera.lookAt(0, 0, 0);
+
+                // Animated lights orbit
+                cyanLight.position.x = Math.sin(t * 0.6) * 7;
+                cyanLight.position.y = Math.cos(t * 0.4) * 4;
+                goldLight.position.x = Math.cos(t * 0.5) * 7;
+                goldLight.position.y = Math.sin(t * 0.7) * 4;
+
+                // Particle drift
+                particles.rotation.y = t * 0.04;
+                particles.rotation.x = t * 0.015;
+
+                // Card float
+                cards.forEach((c, i) => {
+                    if (i !== activeIdx) {
+                        c.mesh.position.y = c.feature.pos[1] + Math.sin(t + i * 1.2) * 0.06;
+                        c.halo.position.y = c.feature.pos[1] + Math.sin(t + i * 1.2) * 0.06;
+                    }
+                });
+
+                // Grid scroll
+                grid.position.z = (t * 0.15) % 1;
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // --- RESIZE ---
+            window.addEventListener('resize', () => {
+                W = section.clientWidth; H = section.clientHeight;
+                camera.aspect = W / H;
+                camera.updateProjectionMatrix();
+                renderer.setSize(W, H);
+            });
+        })();
+    </script>
+
+    <!-- ================= HERO INTERACTIVITY ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Ripple Effect ---
+            const btn = document.getElementById('fix-chaos-btn');
+            if (btn) {
+                btn.addEventListener('click', function (e) {
+                    let x = e.clientX - e.target.offsetLeft;
+                    let y = e.clientY - e.target.offsetTop;
+                    let ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 800);
+                });
+            }
+
+            // --- Mouse Parallax ---
+            const hero = document.getElementById('chaos-impact');
+            if (hero) {
+                hero.addEventListener('mousemove', (e) => {
+                    const { clientX, clientY } = e;
+                    const xPos = (clientX / window.innerWidth - 0.5) * 40;
+                    const yPos = (clientY / window.innerHeight - 0.5) * 40;
+
+                    gsap.to('.hero-chaos-side .chaos-element', {
+                        x: xPos * 0.5,
+                        y: yPos * 0.5,
+                        duration: 1,
+                        ease: 'power2.out',
+                        stagger: 0.05
+                    });
+
+                    gsap.to('.hero-solution-side .solution-element', {
+                        x: -xPos * 0.3,
+                        y: -yPos * 0.3,
+                        duration: 1,
+                        ease: 'power2.out'
+                    });
+
+                    gsap.to('.solution-glow', {
+                        x: -xPos * 0.8,
+                        y: -yPos * 0.8,
+                        duration: 1.5,
+                        ease: 'power2.out'
+                    });
+                });
+            }
+
+            // --- Typing Animation (GSAP) ---
+            const subtext = document.getElementById('typing-subtext');
+            if (subtext) {
+                const originalText = subtext.innerText;
+                subtext.innerText = '';
+                let i = 0;
+                function typeWriter() {
+                    if (i < originalText.length) {
+                        subtext.innerText += originalText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 25);
+                    }
+                }
+                // Delay start slightly
+                setTimeout(typeWriter, 1200);
+            }
+
+            // --- Main Title Entry ---
+            gsap.from('.hero-heading-main', {
+                opacity: 0,
+                y: 50,
+                duration: 1.4,
+                ease: 'power3.out'
+            });
+        });
+    </script>
+
+    <!-- ================= THREE.JS CINEMATIC IMPACT JOURNEY INIT ================= -->
+    <script>
+        (function () {
+            'use strict';
+            const section = document.getElementById('chaos-impact');
+            const canvas = document.getElementById('chaosCanvas');
+            if (!section || !canvas || typeof THREE === 'undefined') return;
+
+            let W = window.innerWidth, H = window.innerHeight;
+
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x020617);
+            scene.fog = new THREE.Fog(0x020617, 10, 40);
+
+            const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 1000);
+            camera.position.z = 18;
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setSize(W, H);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // --- Lights ---
+            const amb = new THREE.AmbientLight(0x4c1d95, 0.3);
+            scene.add(amb);
+            const coreLight = new THREE.PointLight(0x00f2ff, 0, 25);
+            coreLight.position.set(0, 0, 5);
+            scene.add(coreLight);
+
+            // --- AI Core (The Center) ---
+            const coreGroup = new THREE.Group();
+            scene.add(coreGroup);
+
+            const coreInner = new THREE.Mesh(
+                new THREE.IcosahedronGeometry(2, 4),
+                new THREE.MeshStandardMaterial({
+                    color: 0x00f2ff, emissive: 0x00f2ff, emissiveIntensity: 0,
+                    transparent: true, opacity: 0
+                })
+            );
+            coreGroup.add(coreInner);
+
+            const coreWire = new THREE.Mesh(
+                new THREE.IcosahedronGeometry(2.5, 2),
+                new THREE.MeshBasicMaterial({ color: 0x00f2ff, wireframe: true, transparent: true, opacity: 0 })
+            );
+            coreGroup.add(coreWire);
+
+            // --- Particles (Multi-Layer) ---
+            const pCount = 2500;
+            const pGeo = new THREE.BufferGeometry();
+            const pPos = new Float32Array(pCount * 3);
+            const pState = []; // velocity & original distance
+
+            for (let i = 0; i < pCount; i++) {
+                const r = 20 + Math.random() * 30;
+                const theta = Math.random() * Math.PI * 2;
+                const phi = Math.random() * Math.PI;
+
+                pPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+                pPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+                pPos[i * 3 + 2] = r * Math.cos(phi);
+
+                pState.push({
+                    vel: 0.02 + Math.random() * 0.04,
+                    r: r,
+                    noise: Math.random()
+                });
+            }
+            pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            const pMat = new THREE.PointsMaterial({ color: 0x7c3aed, size: 0.1, transparent: true, opacity: 0.4 });
+            const particles = new THREE.Points(pGeo, pMat);
+            scene.add(particles);
+
+            // --- Interaction State ---
+            const mouse = { x: 0, y: 0 };
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = (e.clientX / W - 0.5) * 2;
+                mouse.y = (e.clientY / H - 0.5) * -2;
+
+                // Global Stage Parallax Tilt
+                gsap.to("#hero-interactive-layer", {
+                    rotateY: mouse.x * 5,
+                    rotateX: -mouse.y * 5,
+                    duration: 1.5,
+                    ease: "power2.out"
+                });
+            });
+
+            // --- Scroll Timeline ---
+            gsap.registerPlugin(ScrollTrigger);
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 2,
+                }
+            });
+
+            // 1. Scene Chaos -> Transformation
+            tl.to(".chaos-glass-card", {
+                opacity: 0, scale: 0.5,
+                x: (i) => (Math.random() - 0.5) * 800,
+                y: (i) => (Math.random() - 0.5) * 800,
+                duration: 1.5, stagger: 0.1
+            }, 0);
+
+            tl.to(".hero-text-stage", { opacity: 0, y: -100, duration: 1 }, 0);
+            tl.to(pMat.color, { r: 0, g: 0.95, b: 1, duration: 2 }, 0.5);
+            tl.to(coreInner.material, { opacity: 1, emissiveIntensity: 2.5, duration: 2 }, 0.5);
+            tl.to(coreWire.material, { opacity: 0.3, duration: 2 }, 0.5);
+            tl.to(coreLight, { intensity: 8, duration: 2 }, 0.5);
+
+            // 2. Transformation -> Solution Reveal
+            tl.to("#aisa-solution-panel", { autoAlpha: 1, scale: 1, rotateX: 0, duration: 2, ease: "expo.out" }, 2.5);
+            tl.to(camera.position, { z: 12, duration: 2 }, 2.5);
+            tl.to(coreGroup.position, { y: 15, duration: 1.5, ease: "power2.in" }, 3);
+
+            // --- Loop ---
+            function animate() {
+                requestAnimationFrame(animate);
+                const t = Date.now() * 0.001;
+                const prog = tl.progress();
+                const posAttr = pGeo.attributes.position.array;
+
+                for (let i = 0; i < pCount; i++) {
+                    const s = pState[i];
+                    if (prog < 0.25) {
+                        // Slow Directional Drift
+                        posAttr[i * 3] *= 0.999;
+                        posAttr[i * 3 + 1] *= 0.999;
+                    } else if (prog < 0.8) {
+                        // Magnetic Centered Pull
+                        const lerpFactor = 0.02 + prog * 0.05;
+                        posAttr[i * 3] *= (1 - lerpFactor);
+                        posAttr[i * 3 + 1] *= (1 - lerpFactor);
+                        posAttr[i * 3 + 2] *= (1 - lerpFactor);
+                    } else {
+                        // Solution Calm Flow
+                        const r = 10 + i * 0.01;
+                        const noise = Math.sin(t + i) * 0.5;
+                        posAttr[i * 3] += (Math.cos(t * 0.5 + i) * r - posAttr[i * 3]) * 0.01;
+                        posAttr[i * 3 + 1] += (Math.sin(t * 0.5 + i) * r - posAttr[i * 3 + 1]) * 0.01;
+                    }
+                }
+                pGeo.attributes.position.needsUpdate = true;
+
+                coreGroup.rotation.y += 0.005;
+                coreGroup.rotation.x += 0.002;
+
+                // Subtle Camera Sway
+                camera.position.x += (mouse.x * 2 - camera.position.x) * 0.05;
+                camera.position.y += (mouse.y * 1 - camera.position.y) * 0.05;
+                camera.lookAt(0, 0, 0);
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                W = window.innerWidth; H = window.innerHeight;
+                camera.aspect = W / H;
+                camera.updateProjectionMatrix();
+                renderer.setSize(W, H);
+            });
+        })();
+    </script>
+    <!-- UWO Premium AI Chatbot Widget -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <div id="uwo-chatbot-widget">
+        <!-- Floating Toggle Button -->
+        <div class="chatbot-toggle-btn">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <!-- Main Chatbot Panel -->
+        <div class="chatbot-panel">
+            <div class="chatbot-header">
+                <div class="bot-avatar">
+                    <a href="admin.html">
+                        <img src="images/uwo-logo.png" alt="UWO&trade; Logo">
+                    </a>
+                </div>
+                <div class="header-info">
+                    <h3>UWO<sup>&trade;</sup> AI Assistant</h3>
+                    <p>Always Intelligent</p>
+                </div>
+                <button class="chatbot-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Chat Area -->
+            <div class="chat-area">
+                <!-- Messages & Inline Email Form injected here -->
+            </div>
+
+            <!-- Input Bar -->
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+                <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <button class="chatbot-send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <div class="powered-by">
+                Powered by UWO<sup>&trade;</sup> Ecosystem
+            </div>
+        </div>
+    </div>
+    <script src="chatbot.js?v=1.1"></script>
+</body>
+
+</html>

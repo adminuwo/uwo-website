@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWO™ | Sales Partner Portal</title>
+    <link rel="icon" type="image/webp" href="images/uwo-logo.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D6A559;
+            --primary-dark: #B48E3D;
+            --bg-deep: #050811;
+            --bg-card: rgba(11, 17, 32, 0.85);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent-blue: #162377;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-deep);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            color: var(--text-main);
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(214, 165, 89, 0.08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 10s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 440px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(25px);
+            border: 1.5px solid rgba(214, 165, 89, 0.2);
+            border-radius: 32px;
+            padding: 50px 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 
+                        inset 0 0 20px rgba(214, 165, 89, 0.05);
+            text-align: center;
+        }
+
+        .brand-logo {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 25px;
+            background: rgba(214, 165, 89, 0.1);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(214, 165, 89, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .brand-logo:hover {
+            transform: translateY(-5px) rotate(5deg);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(214, 165, 89, 0.2);
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: block;
+        }
+
+        .input-wrapper > i:not(.toggle-password) {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(214, 165, 89, 0.5);
+            font-size: 16px;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-dim);
+            font-size: 16px;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .toggle-password:hover {
+            color: var(--primary);
+        }
+
+        input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 18px 50px 18px 55px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 15px rgba(214, 165, 89, 0.1);
+        }
+
+        input:focus + i {
+            color: var(--primary);
+        }
+
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #000;
+            border: none;
+            padding: 20px;
+            border-radius: 18px;
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 15px;
+            box-shadow: 0 15px 30px rgba(214, 165, 89, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(214, 165, 89, 0.4);
+        }
+
+        .btn-login:active {
+            transform: translateY(-1px) scale(1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-deep);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(214, 165, 89, 0.1);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .error { color: #ef4444; }
+        .success { color: #10b981; }
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 40px 25px;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xn9x5cied5");
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1072566655124889');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+    /></noscript>
+
+    <div class="bg-glow"></div>
+
+    <div class="login-container">
+        <div class="login-card" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="brand-logo">
+                <img src="images/uwo-logo.png" alt="UWO Logo">
+            </div>
+
+            <!-- Login View -->
+            <div id="loginView">
+                <h1>Partner Portal</h1>
+                <p class="subtitle">Sales Partner Log In</p>
+
+                <div class="input-group">
+                    <label>Partner Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="partner@uwo.com" autocomplete="email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-eye toggle-password" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+                    </div>
+                </div>
+
+                <button class="btn-login" id="loginBtn" onclick="handleLogin()">Sign In</button>
+
+                <div id="message"></div>
+
+                <div style="display: flex; justify-content: space-between; margin-top: 25px; flex-wrap: wrap; gap: 10px;">
+                    <a href="index.html" class="back-link" style="margin-top: 0;"><i class="fas fa-arrow-left"></i> Return to Home</a>
+                    <a href="javascript:void(0)" onclick="showRegister()" class="back-link" style="margin-top: 0;"><i class="fas fa-user-plus"></i> Request Access</a>
+                </div>
+            </div>
+
+            <!-- Registration View -->
+            <div id="registerView" style="display: none;">
+                <h1>Request Access</h1>
+                <p class="subtitle">Create Sales Partner Account</p>
+
+                <div class="input-group" style="margin-bottom: 12px;">
+                    <label>Full Name*</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="reg-name" placeholder="Aman Sharma" style="padding: 12px 20px 12px 45px;">
+                        <i class="fas fa-user" style="font-size: 13px; left: 18px;"></i>
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 12px;">
+                    <label>Email Address*</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="reg-email" placeholder="aman@sharma.com" style="padding: 12px 20px 12px 45px;">
+                        <i class="fas fa-envelope" style="font-size: 13px; left: 18px;"></i>
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 12px;">
+                    <label>Phone Number*</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="reg-phone" placeholder="9999999999" style="padding: 12px 20px 12px 45px;">
+                        <i class="fas fa-phone" style="font-size: 13px; left: 18px;"></i>
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <label>Password*</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="reg-password" placeholder="••••••••" style="padding: 12px 20px 12px 45px;">
+                        <i class="fas fa-lock" style="font-size: 13px; left: 18px;"></i>
+                    </div>
+                </div>
+
+                <button class="btn-login" id="registerBtn" onclick="handleRegister()" style="margin-top: 5px; padding: 15px;">Submit Request</button>
+
+                <div id="reg-message" style="margin-top: 15px; font-size: 13px; font-weight: 600; display: none;"></div>
+
+                <div style="display: flex; justify-content: center; margin-top: 15px;">
+                    <a href="javascript:void(0)" onclick="showLogin()" class="back-link" style="margin-top: 0;"><i class="fas fa-arrow-left"></i> Return to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loader">
+        <div class="spinner"></div>
+        <p id="loaderText" style="margin-top: 20px; letter-spacing: 5px; font-weight: 800; font-size: 12px; text-transform: uppercase;">Signing In...</p>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        if (localStorage.getItem("uwo_partner_token")) {
+            window.location.href = "partner-dashboard.html";
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('register') === 'true') {
+            showRegister();
+        }
+
+        document.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                if (document.getElementById("loginView").style.display !== "none") {
+                    handleLogin();
+                } else {
+                    handleRegister();
+                }
+            }
+        });
+
+        function showRegister() {
+            document.getElementById("loginView").style.display = "none";
+            document.getElementById("registerView").style.display = "block";
+            document.getElementById("message").style.display = "none";
+        }
+
+        function showLogin() {
+            document.getElementById("loginView").style.display = "block";
+            document.getElementById("registerView").style.display = "none";
+            document.getElementById("reg-message").style.display = "none";
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.getElementById("togglePassword");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+
+        async function handleLogin() {
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const loader = document.getElementById("loader");
+            const loaderText = document.getElementById("loaderText");
+            const btn = document.getElementById("loginBtn");
+
+            if (!email || !password) {
+                showMessage("Email and password required", "error");
+                return;
+            }
+
+            loaderText.innerText = "Signing In...";
+            loader.style.display = "flex";
+            btn.disabled = true;
+
+            try {
+                const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
+                    ? "http://localhost:8080/api/affiliate" 
+                    : "https://uwo-backend-977864306871.asia-south1.run.app/api/affiliate";
+
+                const response = await fetch(`${API_URL}/partner/login`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("uwo_partner_token", data.token);
+                    showMessage("Access Granted. Loading dashboard...", "success");
+                    setTimeout(() => {
+                        window.location.href = "partner-dashboard.html";
+                    }, 1200);
+                } else {
+                    loader.style.display = "none";
+                    btn.disabled = false;
+                    showMessage("Login Failed: " + (data.message || "Invalid credentials"), "error");
+                }
+            } catch (error) {
+                loader.style.display = "none";
+                btn.disabled = false;
+                showMessage("Server unreachable. Please check connection.", "error");
+            }
+        }
+
+        async function handleRegister() {
+            const name = document.getElementById("reg-name").value.trim();
+            const email = document.getElementById("reg-email").value.trim();
+            const phone = document.getElementById("reg-phone").value.trim();
+            const password = document.getElementById("reg-password").value;
+            const loader = document.getElementById("loader");
+            const loaderText = document.getElementById("loaderText");
+            const btn = document.getElementById("registerBtn");
+
+            if (!name || !email || !phone || !password) {
+                showRegMessage("All marked fields (*) are required", "error");
+                return;
+            }
+
+            loaderText.innerText = "Submitting Request...";
+            loader.style.display = "flex";
+            btn.disabled = true;
+
+            try {
+                const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
+                    ? "http://localhost:8080/api/affiliate" 
+                    : "https://uwo-backend-977864306871.asia-south1.run.app/api/affiliate";
+
+                const response = await fetch(`${API_URL}/partner/register`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, phone, password }),
+                });
+
+                const data = await response.json();
+                loader.style.display = "none";
+                btn.disabled = false;
+
+                if (response.ok) {
+                    showRegMessage(data.message || "Registration request submitted! Pending approval.", "success");
+                    // Reset fields
+                    document.getElementById("reg-name").value = "";
+                    document.getElementById("reg-email").value = "";
+                    document.getElementById("reg-phone").value = "";
+                    document.getElementById("reg-password").value = "";
+                    
+                    setTimeout(() => {
+                        showLogin();
+                    }, 3000);
+                } else {
+                    showRegMessage(data.message || "Registration failed", "error");
+                }
+            } catch (error) {
+                loader.style.display = "none";
+                btn.disabled = false;
+                showRegMessage("Server unreachable. Please check connection.", "error");
+            }
+        }
+
+        function showMessage(text, type) {
+            const messageEl = document.getElementById("message");
+            messageEl.innerText = text;
+            messageEl.className = type;
+            messageEl.style.display = "block";
+            
+            if (type === 'error') {
+                setTimeout(() => {
+                    messageEl.style.display = "none";
+                }, 5000);
+            }
+        }
+
+        function showRegMessage(text, type) {
+            const messageEl = document.getElementById("reg-message");
+            messageEl.innerText = text;
+            messageEl.className = type;
+            messageEl.style.display = "block";
+        }
+    </script>
+</body>
+</html>

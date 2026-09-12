@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & News | UWO™</title>
+  <link rel="icon" type="image/webp" href="images/uwoooo.webp">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="earn-refer.css?v=1.5">
+  <link rel="stylesheet" href="chatbot.css?v=1.1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="earn-refer.js?v=1.5"></script>
+  <script src="main.js?v=3.5" defer></script>
+
+  <style>
+    /* ============================================
+       UWO™ BLOGS — PREMIUM WARM EDITORIAL PALETTE
+    ============================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --ivory: #F5F1E8;
+      --beige: #EDE5D4;
+      --beige-card: #F0EAD8;
+      --beige-border: #DDD0B8;
+      --champagne: #C9A66B;
+      --gold: #B8955A;
+      --gold-light: rgba(201, 166, 107, 0.15);
+      --sand: #D8C1A0;
+      --espresso: #1F1A17;
+      --brown-muted: #6E6257;
+      --brown-light: #8C7B6E;
+    }
+
+    /* ---- BASE ---- */
+    body.blogs-theme {
+      background: var(--ivory) !important;
+      background-image:
+        radial-gradient(ellipse at 0% 0%, rgba(201, 166, 107, 0.12) 0px, transparent 55%),
+        radial-gradient(ellipse at 100% 80%, rgba(216, 193, 160, 0.18) 0px, transparent 55%) !important;
+      color: var(--espresso) !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ---- NAVBAR ---- */
+    header.navbar-blogs {
+      background: #ffffff !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom: 1px solid var(--beige-border) !important;
+      box-shadow: 0 4px 30px rgba(110, 98, 87, 0.06) !important;
+    }
+
+    header.navbar-blogs .nav-links a,
+    header.navbar-blogs .projects-link {
+      color: var(--espresso) !important;
+    }
+
+    header.navbar-blogs .hamburger div {
+      background: var(--espresso) !important;
+    }
+
+    /* ---- FEATURED CARD ---- */
+    .featured-container {
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    .featured-card {
+      background: var(--beige-card);
+      border: 1px solid var(--beige-border);
+      border-radius: 28px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      box-shadow: 0 24px 60px rgba(110, 98, 87, 0.10), 0 4px 16px rgba(110, 98, 87, 0.05);
+      transition: all 0.4s ease;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      box-shadow: inset 0 0 0 1px rgba(201, 166, 107, 0.12);
+      pointer-events: none;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 80px rgba(110, 98, 87, 0.14), 0 8px 24px rgba(201, 166, 107, 0.10);
+    }
+
+    .featured-img-wrapper {
+      position: relative;
+      height: 100%;
+      min-height: 320px;
+      overflow: hidden;
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s ease;
+    }
+
+    .featured-card:hover .featured-img {
+      transform: scale(1.04);
+    }
+
+    .featured-img-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--beige-card));
+    }
+
+    .featured-content {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--beige-card);
+    }
+
+    /* ---- TAGS ---- */
+    .blog-tag {
+      align-self: flex-start;
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid rgba(184, 149, 90, 0.25);
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .featured-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      color: var(--espresso);
+    }
+
+    .featured-desc {
+      color: var(--brown-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--brown-light);
+      margin-bottom: 24px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .featured-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: gap 0.25s;
+    }
+
+    .featured-card:hover .featured-cta {
+      gap: 14px;
+    }
+
+    /* ---- FILTERS BAR ---- */
+    .filters-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 18px;
+      border-bottom: 1px solid var(--beige-border);
+      padding-bottom: 24px;
+    }
+
+    .categories {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      background: var(--beige-card);
+      border: 1px solid var(--beige-border);
+      color: var(--brown-muted);
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.25s;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(110, 98, 87, 0.04);
+    }
+
+    .category-btn:hover {
+      background: var(--ivory);
+      border-color: var(--champagne);
+      color: var(--gold);
+      box-shadow: 0 4px 14px rgba(201, 166, 107, 0.12);
+    }
+
+    .category-btn.active {
+      background: var(--champagne);
+      color: #fff;
+      border-color: var(--champagne);
+      box-shadow: 0 6px 18px rgba(201, 166, 107, 0.28);
+      font-weight: 700;
+    }
+
+    /* ---- SEARCH ---- */
+    .search-box {
+      position: relative;
+      width: 320px;
+    }
+
+    .search-box input {
+      background: var(--beige-card) !important;
+      border: 1px solid var(--beige-border) !important;
+      border-radius: 50px !important;
+      padding: 11px 20px 11px 44px !important;
+      color: var(--espresso) !important;
+      font-size: 14px;
+      margin-bottom: 0 !important;
+      transition: border 0.2s, box-shadow 0.2s !important;
+    }
+
+    .search-box input:focus {
+      border-color: var(--champagne) !important;
+      box-shadow: 0 0 0 3px rgba(201, 166, 107, 0.15) !important;
+      outline: none !important;
+    }
+
+    .search-box input::placeholder {
+      color: var(--brown-light);
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--champagne);
+    }
+
+    /* ---- BLOG CARDS ---- */
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .blog-card {
+      background: var(--beige-card);
+      border: 1px solid var(--beige-border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 24px rgba(110, 98, 87, 0.07);
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(201, 166, 107, 0.4);
+      box-shadow: 0 20px 50px rgba(110, 98, 87, 0.12), 0 4px 16px rgba(201, 166, 107, 0.08);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .blog-card:hover .card-img {
+      transform: scale(1.07);
+    }
+
+    .card-img-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, var(--beige-card), transparent);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      color: var(--espresso);
+      transition: color 0.25s;
+    }
+
+    .blog-card:hover .card-title {
+      color: var(--gold);
+    }
+
+    .card-desc {
+      color: var(--brown-muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--beige-border);
+      padding-top: 16px;
+    }
+
+    .read-more-btn {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .blog-card:hover .read-more-btn {
+      gap: 12px;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 992px) {
+      .featured-card {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: auto;
+      }
+
+      .featured-img-wrapper {
+        height: 200px;
+        min-height: 200px;
+      }
+
+      .featured-img-wrapper::after {
+        background: linear-gradient(to top, var(--beige-card) 5%, transparent) !important;
+      }
+
+      .featured-content {
+        padding: 28px 24px;
+      }
+
+      .featured-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-title {
+        font-size: 1.45rem;
+      }
+
+      .featured-desc {
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+      }
+
+      .filters-bar {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .search-box {
+        width: 100%;
+      }
+
+      .categories {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .category-btn {
+        flex-shrink: 0;
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+
+      .blogs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .featured-card {
+        border-radius: 20px;
+      }
+
+      .featured-card::before {
+        border-radius: 20px;
+      }
+
+      .featured-content {
+        padding: 22px 16px;
+      }
+
+      .blog-card {
+        border-radius: 20px;
+      }
+
+      .card-body {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xn9x5cied5");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1072566655124889');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body class="blogs-theme">
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar navbar-blogs">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/uwoooo.webp" alt="UWO™ Logo">
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects ▾</span>
+          <div class="projects-menu">
+            <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+            <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+            <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+          </div>
+        </div>
+
+        <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" class="active" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+          <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+        </button>
+      </nav>
+
+      <div class="hamburger" onclick="toggleDrawer()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-logo">
+        <img src="images/uwoooo.webp" alt="UWO Logo">
+        <span>UWO<sup>™</sup></span>
+      </div>
+      <div class="mobile-drawer-close" onclick="toggleDrawer()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="about.html" onclick="toggleDrawer()">About UWO<sup>™</sup></a>
+    <a href="our-team.html" onclick="toggleDrawer()">Our Team</a>
+    <a href="blogs.html" class="active" onclick="toggleDrawer()">Blogs</a>
+    <a href="contact.html" onclick="toggleDrawer()">Contact</a>
+    <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+      <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+    </a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= MAIN BLOG LISTING ================= -->
+  <div class="container" style="padding-top: 130px;">
+
+    <!-- Featured Blog Banner -->
+    <div class="featured-container" id="featuredContainer" style="display: none;" data-aos="fade-up">
+      <!-- Injected Dynamically -->
+    </div>
+
+    <!-- Filters & Search -->
+    <div class="filters-bar" data-aos="fade-up">
+      <div class="categories" id="categoriesBox">
+        <button class="category-btn active" onclick="filterCategory('All', this)">All Insights</button>
+        <button class="category-btn" onclick="filterCategory('AI & Automation', this)">AI & Automation</button>
+        <button class="category-btn" onclick="filterCategory('Tech Insights', this)">Tech Insights</button>
+        <button class="category-btn" onclick="filterCategory('Digital Commerce', this)">Digital Commerce</button>
+        <button class="category-btn" onclick="filterCategory('Research', this)">Research</button>
+      </div>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search articles..." oninput="handleSearch(this.value)">
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blogs-grid" id="blogsGrid" data-aos="fade-up">
+      <!-- Injected Dynamically -->
+    </div>
+
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <!-- LEFT SIDE -->
+      <div class="footer-left">
+        <div class="social-links">
+          <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+            <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+          </a>
+          <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+            <img src="images/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+            <img src="images/facebook..webp" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+            title="Instagram">
+            <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+            title="LinkedIn">
+            <img src="images/linkedin..webp" alt="LinkedIn">
+          </a>
+          <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+            <img src="images/twitter..webp" alt="Twitter">
+          </a>
+          <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper"
+            title="Pinterest">
+            <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper"
+            title="Reddit">
+            <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper"
+            title="Quora">
+            <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+          </a>
+          <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper"
+            title="Medium">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+              <path
+                d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z"
+                fill="#ffffff" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+            title="YouTube">
+            <img src="images/youtube..webp" alt="YouTube">
+          </a>
+        </div>
+        <p style="margin-top: 15px; margin-bottom: 0;">UWO<sup>™</sup> - Unified Web Options &amp; Services Pvt. Ltd.
+          &copy; 2024</p>
+        <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9rem;">
+          <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+          <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+          <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+        </p>
+      </div>
+
+      <!-- D-U-N-S Registered™ Seal Wrapper -->
+      <div class="duns-seal-container"
+        style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+        <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+      </div>
+      <div style="display: none !important;">
+        <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="footer-right">
+        <h2 class="partner-heading">AISA<sup>&trade;</sup> | AI Mall<sup>&trade;</sup> | A-Series&trade;</h2>
+        <div class="partner-logos-row">
+          <div class="logo-item"><img src="images/azure.png" alt="Azure" height="38"></div>
+          <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="38"></div>
+          <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="38"></div>
+          <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="38"></div>
+          <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="38"></div>
+          <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="38"></div>
+          <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="38"></div>
+        </div>
+        <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading Technology
+          providers <br> D-U-N-S® Registered™</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- UWO Premium AI Chatbot Widget -->
+  <div id="uwo-chatbot-widget">
+    <div class="chatbot-toggle-btn">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+    <div class="chatbot-panel">
+      <div class="chatbot-header">
+        <div class="bot-avatar">
+          <a href="admin.html">
+            <img src="images/uwoooo.webp" alt="UWO Logo">
+          </a>
+        </div>
+        <div class="header-info">
+          <h3>UWO<sup>™</sup> AI Assistant</h3>
+          <p>Always Intelligent</p>
+        </div>
+        <button class="chatbot-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="chat-area"></div>
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+        <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="chatbot-send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="powered-by">
+        Powered by UWO<sup>™</sup> Ecosystem
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js?v=1.1"></script>
+
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 100, duration: 800 });
+
+
+
+    let allBlogs = [];
+    let currentCategory = 'All';
+    let searchQuery = '';
+
+    // Toggle Mobile Drawer
+    function toggleDrawer() {
+      const drawer = document.getElementById("mobileDrawer");
+      const overlay = document.getElementById("drawerOverlay");
+      drawer.classList.toggle("open");
+      overlay.classList.toggle("active");
+    }
+
+    // Load Blogs
+    async function loadBlogs() {
+      const grid = document.getElementById('blogsGrid');
+      const featured = document.getElementById('featuredContainer');
+
+      try {
+        grid.innerHTML = "<div style='grid-column:1/-1; text-align:center; padding:40px; color:var(--uwo-text-muted);'><i class='fa-solid fa-spinner fa-spin' style='font-size:30px; margin-bottom:15px; color:var(--uwo-accent);'></i><p>Retrieving expert insights...</p></div>";
+
+        const response = await fetch(`${API_URL}/blogs`);
+        allBlogs = await response.json();
+
+        renderBlogs();
+      } catch (err) {
+        console.error(err);
+        grid.innerHTML = `
+          <div style='grid-column:1/-1; text-align:center; padding:40px;'>
+            <i class='fa-solid fa-triangle-exclamation' style='font-size:40px; color:#ef4444; margin-bottom:15px;'></i>
+            <h3>Unable to connect to Server</h3>
+            <p style='color:var(--uwo-text-muted); margin-top:5px;'>Check if database and backend portal is running.</p>
+          </div>
+        `;
+      }
+    }
+
+    function resolveBlogImage(blog) {
+      if (!blog) return '';
+      const img = blog.coverImage || blog.featuredImage;
+      if (!img) return getFallbackImage(blog.category, blog.title);
+      if (img.includes('storage.googleapis.com/uwo-document/')) {
+        const objectPath = img.split('storage.googleapis.com/uwo-document/')[1];
+        return API_URL + '/media/' + objectPath;
+      }
+      if (img.includes('/api/media/')) {
+        const mediaPath = img.split('/api/media/')[1];
+        return API_URL + '/media/' + mediaPath;
+      }
+      if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:')) {
+        return img;
+      }
+      if (img.startsWith('/uploads/')) {
+        return API_URL.replace('/api', '') + img;
+      }
+      return API_URL + '/media/' + img.replace(/^\/+/, '');
+    }
+
+    // Render Blogs
+    function renderBlogs() {
+      const grid = document.getElementById('blogsGrid');
+      const featured = document.getElementById('featuredContainer');
+
+      // Filter list
+      let filtered = allBlogs.filter(b => {
+        const matchesCategory = currentCategory === 'All' || b.category.toLowerCase() === currentCategory.toLowerCase();
+        const matchesSearch = b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          b.content.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        featured.style.display = 'none';
+        grid.innerHTML = `
+          <div style='grid-column:1/-1; text-align:center; padding:60px; color:var(--uwo-text-muted);'>
+            <i class='fa-solid fa-box-open' style='font-size:40px; margin-bottom:15px; opacity:0.3;'></i>
+            <p>No articles match your search or filter options.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Feature the latest blog if no active search query
+      if (!searchQuery && currentCategory === 'All' && filtered.length > 0) {
+        const featBlog = filtered[0];
+        const featImgSrc = resolveBlogImage(featBlog);
+        featured.style.display = 'block';
+        featured.innerHTML = `
+          <div class="featured-card" onclick="window.open('blog-single.html?slug=${featBlog.slug}', '_blank')">
+            <div class="featured-img-wrapper">
+              <img src="${featImgSrc}" alt="${featBlog.title}" class="featured-img" data-category="${featBlog.category}" data-title="${featBlog.title}" onerror="this.onerror=null; this.src=getFallbackImage(this.dataset.category, this.dataset.title);">
+            </div>
+            <div class="featured-content">
+              <span class="blog-tag">${featBlog.category}</span>
+              <h2 class="featured-title">${featBlog.title}</h2>
+              <p class="featured-desc">${featBlog.seoDescription || featBlog.content.substring(0, 160).replace(/<[^>]*>/g, '') + '...'}</p>
+              
+              <div class="blog-meta">
+                <div class="meta-item"><i class="fa-regular fa-calendar"></i> ${new Date(featBlog.createdAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</div>
+                <div class="meta-item"><i class="fa-regular fa-clock"></i> ${featBlog.readTime} min read</div>
+                <div class="meta-item"><i class="fa-regular fa-eye"></i> ${featBlog.views || 0} views</div>
+              </div>
+              
+              <a class="read-more-btn">
+                Read Featured Article <i class="fa-solid fa-arrow-right-long"></i>
+              </a>
+            </div>
+          </div>
+        `;
+
+        // Remove from list so it doesn't duplicate in grid
+        filtered = filtered.slice(1);
+      } else {
+        featured.style.display = 'none';
+      }
+
+      // Render Grid
+      grid.innerHTML = '';
+      filtered.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.onclick = () => window.open(`blog-single.html?slug=${b.slug}`, '_blank');
+        const blogImgSrc = resolveBlogImage(b);
+        card.innerHTML = `
+          <div class="card-img-wrapper">
+            <img src="${blogImgSrc}" alt="${b.title}" class="card-img" data-category="${b.category}" data-title="${b.title}" onerror="this.onerror=null; this.src=getFallbackImage(this.dataset.category, this.dataset.title);">
+          </div>
+          <div class="card-body">
+            <span class="blog-tag" style="margin-bottom:12px;">${b.category}</span>
+            <h3 class="card-title">${b.title}</h3>
+            <p class="card-desc">${b.seoDescription || b.content.substring(0, 120).replace(/<[^>]*>/g, '') + '...'}</p>
+            
+            <div class="card-footer">
+              <div class="blog-meta" style="margin-bottom:0; gap:12px; font-size:11px;">
+                <div class="meta-item"><i class="fa-regular fa-calendar"></i> ${new Date(b.createdAt).toLocaleDateString()}</div>
+                <div class="meta-item"><i class="fa-regular fa-eye"></i> ${b.views || 0}</div>
+              </div>
+              <a class="read-more-btn" style="font-size:11px;">
+                Read <i class="fa-solid fa-arrow-right-long"></i>
+              </a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter Category
+    function filterCategory(category, element) {
+      currentCategory = category;
+      document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      renderBlogs();
+    }
+
+    // Handle Search
+    let searchTimeout;
+    function handleSearch(val) {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        searchQuery = val;
+        renderBlogs();
+      }, 300);
+    }
+
+    document.addEventListener('DOMContentLoaded', loadBlogs);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article Details | UWO™</title>
+  <link rel="icon" type="image/webp" href="images/uwoooo.webp">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="earn-refer.css?v=1.5">
+  <link rel="stylesheet" href="chatbot.css?v=1.1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="earn-refer.js?v=1.5"></script>
+  <script src="main.js?v=3.5" defer></script>
+
+  <style>
+    /* ============================================
+       UWO™ ARTICLE — PREMIUM WARM EDITORIAL PALETTE
+    ============================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --ivory: #F5F1E8;
+      --beige: #EDE5D4;
+      --beige-card: #F0EAD8;
+      --beige-border: #DDD0B8;
+      --champagne: #C9A66B;
+      --gold: #B8955A;
+      --gold-light: rgba(201, 166, 107, 0.15);
+      --espresso: #1F1A17;
+      --brown-muted: #6E6257;
+      --brown-light: #8C7B6E;
+    }
+
+    /* ---- BASE ---- */
+    body.single-theme {
+      background: var(--ivory) !important;
+      background-image:
+        radial-gradient(ellipse at 0% 0%, rgba(201, 166, 107, 0.10) 0px, transparent 55%),
+        radial-gradient(ellipse at 100% 80%, rgba(216, 193, 160, 0.16) 0px, transparent 55%) !important;
+      color: var(--espresso) !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ---- READING PROGRESS ---- */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--champagne), #E8C87A);
+      width: 0%;
+      z-index: 10000;
+      transition: width 0.1s ease;
+      box-shadow: 0 0 8px rgba(201, 166, 107, 0.4);
+    }
+
+    /* ---- NAVBAR ---- */
+    header.navbar-blogs {
+      background: #F8FAFC !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom: 1px solid var(--beige-border) !important;
+      box-shadow: 0 4px 24px rgba(110, 98, 87, 0.07) !important;
+    }
+
+    header.navbar-blogs .nav-links a,
+    header.navbar-blogs .projects-link {
+      color: var(--espresso) !important;
+    }
+
+    header.navbar-blogs .hamburger div {
+      background: var(--espresso) !important;
+    }
+
+    /* ---- LAYOUT ---- */
+    .article-wrapper {
+      margin-top: 140px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 50px;
+    }
+
+    .article-header {
+      margin-bottom: 36px;
+    }
+
+    /* ---- ARTICLE TITLE ---- */
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--espresso);
+      margin-bottom: 22px;
+    }
+
+    /* ---- BANNER IMAGE ---- */
+    .article-banner-img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid var(--beige-border);
+      box-shadow: 0 24px 60px rgba(110, 98, 87, 0.12);
+      margin-bottom: 40px;
+    }
+
+    /* ---- TAG ---- */
+    .blog-tag {
+      background: var(--gold-light);
+      color: var(--gold);
+      border: 1px solid rgba(184, 149, 90, 0.25);
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    /* ---- META ---- */
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--brown-light);
+      border-bottom: 1px solid var(--beige-border);
+      padding-bottom: 18px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* ---- ARTICLE CONTENT ---- */
+    .blog-content {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #3D3530;
+    }
+
+    .blog-content p {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .blog-content p:has(br) {
+      margin-top: 0;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .blog-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    .blog-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .blog-content blockquote {
+      border-left: 4px solid var(--champagne);
+      background: linear-gradient(135deg, rgba(201, 166, 107, 0.08), rgba(240, 234, 216, 0.6));
+      padding: 24px 28px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--espresso);
+      border-radius: 0 20px 20px 0;
+      margin: 30px 0;
+      line-height: 1.5;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+      margin-bottom: 12px;
+      padding-left: 22px;
+    }
+
+    .blog-content li {
+      margin-bottom: 6px;
+      color: #3D3530;
+    }
+
+    .blog-content code {
+      background: rgba(184, 149, 90, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: monospace;
+      color: var(--gold);
+    }
+
+    .blog-content pre {
+      background: #EDE5D4;
+      padding: 22px;
+      border-radius: 14px;
+      overflow-x: auto;
+      border: 1px solid var(--beige-border);
+      margin: 30px 0;
+    }
+
+    .blog-content pre code {
+      background: transparent;
+      padding: 0;
+      color: var(--espresso);
+    }
+
+    .blog-content img {
+      max-width: 100% !important;
+      height: auto !important;
+      border-radius: 18px;
+      margin: 20px 0;
+      border: 1px solid var(--beige-border);
+      box-shadow: 0 12px 32px rgba(110, 98, 87, 0.10);
+    }
+
+    /* Hide copy-paste spacer/divider images */
+    .blog-content img[height="1"],
+    .blog-content img[height="2"],
+    .blog-content img[src*="//:0"] {
+      display: none !important;
+    }
+
+    /* Make tables responsive */
+    .blog-content table {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 20px 0;
+      border-collapse: collapse;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .blog-content .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--beige-border);
+      margin: 38px 0;
+    }
+
+    .blog-content .video-wrapper iframe,
+    .blog-content .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ---- SIDEBAR ---- */
+    .share-sidebar {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
+
+    .sidebar-widget {
+      background: var(--beige-card);
+      border: 1px solid var(--beige-border);
+      border-radius: 22px;
+      padding: 26px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 30px rgba(110, 98, 87, 0.07);
+    }
+
+    .widget-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--espresso);
+      margin-bottom: 18px;
+      border-left: 3px solid var(--champagne);
+      padding-left: 12px;
+    }
+
+    .share-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 11px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--espresso);
+      border: 1px solid var(--beige-border);
+      background: var(--ivory);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .share-btn.twitter:hover {
+      background: #000;
+      border-color: #333;
+    }
+
+    .share-btn.linkedin:hover {
+      background: #0077b5;
+      border-color: #0077b5;
+    }
+
+    .share-btn.facebook:hover {
+      background: #1877f2;
+      border-color: #1877f2;
+    }
+
+    .share-btn.whatsapp:hover {
+      background: #25d366;
+      border-color: #25d366;
+    }
+
+    .share-btn.copy-link:hover {
+      background: var(--champagne);
+      color: #fff;
+      border-color: var(--champagne);
+    }
+
+    /* ---- RELATED ---- */
+    .related-blog-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      cursor: pointer;
+    }
+
+    .related-blog-img {
+      width: 76px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--beige-border);
+      flex-shrink: 0;
+    }
+
+    .related-blog-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--espresso);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color 0.2s;
+    }
+
+    .related-blog-item:hover .related-blog-title {
+      color: var(--gold);
+    }
+
+    /* ---- BACK BTN ---- */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: gap 0.2s;
+    }
+
+    .back-btn:hover {
+      gap: 15px;
+    }
+
+    /* ---- AUTHOR BIO ---- */
+    .author-bio {
+      background: linear-gradient(135deg, var(--beige-card), #EDE5D4);
+      border: 1px solid var(--beige-border);
+      border-radius: 22px;
+      padding: 32px;
+      margin-top: 60px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 12px 36px rgba(110, 98, 87, 0.09);
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--champagne), #E8C87A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 28px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(201, 166, 107, 0.25);
+    }
+
+    /* ---- LIKE BAR ---- */
+    .like-bar {
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid var(--beige-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .like-btn {
+      background: var(--gold-light);
+      border: 1px solid rgba(184, 149, 90, 0.25);
+      color: var(--gold);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+    }
+
+    .like-btn:hover {
+      background: var(--champagne);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(201, 166, 107, 0.25);
+    }
+
+    /* ---- RELATED SECTION ---- */
+    .related-section {
+      margin-top: 80px;
+      border-top: 1px solid var(--beige-border);
+      padding-top: 60px;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 992px) {
+      .article-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .article-banner-img {
+        height: 320px;
+      }
+
+      .share-sidebar {
+        position: static;
+      }
+
+      .share-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .share-btn {
+        width: calc(50% - 5px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-banner-img {
+        height: 240px;
+        border-radius: 18px;
+      }
+
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px;
+      }
+
+      .share-btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xn9x5cied5");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1072566655124889');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body class="single-theme">
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar navbar-blogs">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/uwoooo.webp" alt="UWO™ Logo">
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects ▾</span>
+          <div class="projects-menu">
+            <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+            <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+            <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+          </div>
+        </div>
+
+        <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" class="active" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+          <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+        </button>
+      </nav>
+
+      <div class="hamburger" onclick="toggleDrawer()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-logo">
+        <img src="images/uwoooo.webp" alt="UWO Logo">
+        <span>UWO<sup>™</sup></span>
+      </div>
+      <div class="mobile-drawer-close" onclick="toggleDrawer()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="about.html" onclick="toggleDrawer()">About UWO<sup>™</sup></a>
+    <a href="our-team.html" onclick="toggleDrawer()">Our Team</a>
+    <a href="blogs.html" class="active" onclick="toggleDrawer()">Blogs</a>
+    <a href="contact.html" onclick="toggleDrawer()">Contact</a>
+    <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+      <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+    </a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= MAIN DETAILS WRAPPER ================= -->
+  <div class="container">
+    <div class="article-wrapper">
+
+      <!-- LEFT: Dynamic Blog Details -->
+      <main id="mainArticle" data-aos="fade-up">
+
+        <div class="back-btn" onclick="window.location.href='blogs.html'">
+          <i class="fa-solid fa-arrow-left-long"></i> Back to Insights
+        </div>
+
+        <div id="articleSkeleton" style="text-align: center; padding: 100px 0;">
+          <i class="fa-solid fa-spinner fa-spin"
+            style="font-size: 40px; color: var(--uwo-accent); margin-bottom: 20px;"></i>
+          <p style="color: var(--uwo-text-muted);">Decrypting database records...</p>
+        </div>
+
+        <div id="articleContentWrapper" style="display: none;">
+          <div class="article-header">
+            <span class="blog-tag" id="articleCategory">Category</span>
+            <h1 class="article-title" id="articleTitle">Blog Title</h1>
+
+            <div class="blog-meta">
+              <div class="meta-item"><i class="fa-regular fa-user"></i> <span id="articleAuthor">Author Name</span>
+              </div>
+              <div class="meta-item"><i class="fa-regular fa-calendar"></i> <span id="articleDate">Date</span></div>
+              <div class="meta-item"><i class="fa-regular fa-clock"></i> <span id="articleReadTime">3</span> min read
+              </div>
+              <div class="meta-item"><i class="fa-regular fa-eye"></i> <span id="articleViews">0</span> Views</div>
+            </div>
+          </div>
+
+          <img src="" id="articleBanner" alt="Banner Image" class="article-banner-img">
+
+          <!-- Rich-text details inserted here -->
+          <div class="blog-content" id="articleBody">
+            <!-- Content -->
+          </div>
+
+          <!-- Likes and interactions bar -->
+          <div class="like-bar">
+            <button class="like-btn" id="btnLike" onclick="likeArticle()">
+              <i class="fa-regular fa-thumbs-up"></i> Appreciate <span id="articleLikes">0</span>
+            </button>
+
+            <span style="font-size: 13px; color: var(--uwo-text-muted);">
+              Loved this? Appreciate or share with your team.
+            </span>
+          </div>
+
+          <!-- Author Biography -->
+          <div class="author-bio">
+            <div class="author-avatar" id="avatarLetter">U</div>
+            <div>
+              <h3 style="margin: 0 0 8px 0; color: var(--uwo-text); font-size: 18px; font-weight: 800;"
+                id="bioAuthorName">UWO Editorial</h3>
+              <p style="margin: 0; color: var(--uwo-text-muted); font-size: 14px; line-height: 1.6;">
+                UWO's core engineering and product design teams collaborate to research, develop, and share highly
+                technical articles about AI system architecture, enterprise automation, and universal scale platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- RIGHT: Interactive Sticky Sidebar -->
+      <aside class="share-sidebar" data-aos="fade-up" data-aos-delay="200">
+
+        <!-- Social Share Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Share Insight</h3>
+          <div class="share-buttons">
+            <button class="share-btn twitter" onclick="shareOn('twitter')">
+              <i class="fa-brands fa-x-twitter"></i> Share on X
+            </button>
+            <button class="share-btn linkedin" onclick="shareOn('linkedin')">
+              <i class="fa-brands fa-linkedin-in"></i> Share on LinkedIn
+            </button>
+            <button class="share-btn facebook" onclick="shareOn('facebook')">
+              <i class="fa-brands fa-facebook-f"></i> Share on Facebook
+            </button>
+            <button class="share-btn whatsapp" onclick="shareOn('whatsapp')">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Link
+            </button>
+            <button class="share-btn copy-link" onclick="copyLink()">
+              <i class="fa-regular fa-copy"></i> <span id="btnCopyText">Copy Article URL</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Latest Insights Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Related Insights</h3>
+          <div id="relatedBlogsList">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <!-- LEFT SIDE -->
+      <div class="footer-left">
+        <div class="social-links">
+          <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+            <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+          </a>
+          <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+            <img src="images/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+            <img src="images/facebook..webp" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+            title="Instagram">
+            <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+            title="LinkedIn">
+            <img src="images/linkedin..webp" alt="LinkedIn">
+          </a>
+          <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+            <img src="images/twitter..webp" alt="Twitter">
+          </a>
+          <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper"
+            title="Pinterest">
+            <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper"
+            title="Reddit">
+            <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper"
+            title="Quora">
+            <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+          </a>
+          <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper"
+            title="Medium">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+              <path
+                d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z"
+                fill="#ffffff" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+            title="YouTube">
+            <img src="images/youtube..webp" alt="YouTube">
+          </a>
+        </div>
+        <p style="margin-top: 15px; margin-bottom: 0;">UWO<sup>™</sup> - Unified Web Options &amp; Services Pvt. Ltd.
+          &copy; 2024</p>
+        <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9rem;">
+          <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+          <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+          <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+        </p>
+      </div>
+
+      <!-- D-U-N-S Registered™ Seal Wrapper -->
+      <div class="duns-seal-container"
+        style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+        <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+      </div>
+      <div style="display: none !important;">
+        <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="footer-right">
+        <h2 class="partner-heading">AISA<sup>&trade;</sup> | AI Mall<sup>&trade;</sup> | A-Series&trade;</h2>
+        <div class="partner-logos-row">
+          <div class="logo-item"><img src="images/azure.png" alt="Azure" height="38"></div>
+          <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="38"></div>
+          <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="38"></div>
+          <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="38"></div>
+          <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="38"></div>
+          <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="38"></div>
+          <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="38"></div>
+        </div>
+        <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading Technology
+          providers <br> D-U-N-S® Registered™</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- UWO Premium AI Chatbot Widget -->
+  <div id="uwo-chatbot-widget">
+    <div class="chatbot-toggle-btn">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+    <div class="chatbot-panel">
+      <div class="chatbot-header">
+        <div class="bot-avatar">
+          <a href="admin.html">
+            <img src="images/uwoooo.webp" alt="UWO Logo">
+          </a>
+        </div>
+        <div class="header-info">
+          <h3>UWO<sup>™</sup> AI Assistant</h3>
+          <p>Always Intelligent</p>
+        </div>
+        <button class="chatbot-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="chat-area"></div>
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+        <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="chatbot-send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="powered-by">
+        Powered by UWO<sup>™</sup> Ecosystem
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js?v=1.1"></script>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 100, duration: 800 });
+
+
+
+    let activeBlog = null;
+
+    // Toggle Mobile Drawer
+    function toggleDrawer() {
+      const drawer = document.getElementById("mobileDrawer");
+      const overlay = document.getElementById("drawerOverlay");
+      drawer.classList.toggle("open");
+      overlay.classList.toggle("active");
+    }
+
+    // Dynamic Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+    });
+
+    // Get query param slug
+    const urlParams = new URLSearchParams(window.location.search);
+    const blogSlug = urlParams.get('slug');
+
+    async function loadArticle() {
+      if (!blogSlug) {
+        window.location.href = 'blogs.html';
+        return;
+      }
+
+      try {
+        // Step 1: Trigger view increment and fetch
+        const viewResponse = await fetch(`${API_URL}/blogs/views/${blogSlug}`, { method: 'POST' });
+        if (!viewResponse.ok) {
+          throw new Error('Failed to load article details.');
+        }
+
+        activeBlog = await viewResponse.json();
+
+        // Render detailed content
+        document.getElementById('articleSkeleton').style.display = 'none';
+        document.getElementById('articleContentWrapper').style.display = 'block';
+
+        document.getElementById('articleTitle').innerText = activeBlog.title;
+        document.title = `${activeBlog.seoTitle || activeBlog.title} | UWO™`;
+        document.getElementById('articleCategory').innerText = activeBlog.category;
+        document.getElementById('articleAuthor').innerText = activeBlog.author || 'UWO Team';
+        document.getElementById('articleDate').innerText = new Date(activeBlog.createdAt).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' });
+        document.getElementById('articleReadTime').innerText = activeBlog.readTime || 3;
+        document.getElementById('articleViews').innerText = activeBlog.views || 1;
+        document.getElementById('articleLikes').innerText = activeBlog.likes || 0;
+
+        const avatarLetter = (activeBlog.author || 'U').charAt(0).toUpperCase();
+        document.getElementById('avatarLetter').innerText = avatarLetter;
+        document.getElementById('bioAuthorName').innerText = `${activeBlog.author || 'UWO Editorial'}`;
+
+        function resolveBlogImage(blog) {
+          if (!blog) return '';
+          const img = blog.coverImage || blog.featuredImage;
+          if (!img) return getFallbackImage(blog.category, blog.title);
+          if (img.includes('storage.googleapis.com/uwo-document/')) {
+            const objectPath = img.split('storage.googleapis.com/uwo-document/')[1];
+            return API_URL + '/media/' + objectPath;
+          }
+          if (img.includes('/api/media/')) {
+            const mediaPath = img.split('/api/media/')[1];
+            return API_URL + '/media/' + mediaPath;
+          }
+          if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:')) {
+            return img;
+          }
+          if (img.startsWith('/uploads/')) {
+            return API_URL.replace('/api', '') + img;
+          }
+          return API_URL + '/media/' + img.replace(/^\/+/, '');
+        }
+
+        const bannerImg = document.getElementById('articleBanner');
+        bannerImg.onerror = function () {
+          this.onerror = null;
+          this.src = getFallbackImage(activeBlog.category, activeBlog.title);
+        };
+        bannerImg.src = resolveBlogImage(activeBlog);
+        bannerImg.alt = activeBlog.title;
+
+        // Render body safely (supports full HTML/mixed media/embedded elements)
+        document.getElementById('articleBody').innerHTML = activeBlog.content;
+
+        // Load related blogs
+        loadRelatedBlogs(activeBlog.category);
+      } catch (err) {
+        console.error(err);
+        document.getElementById('articleSkeleton').innerHTML = `
+          <div style='text-align:center; padding:40px;'>
+            <i class='fa-solid fa-triangle-exclamation' style='font-size:40px; color:#ef4444; margin-bottom:15px;'></i>
+            <h3>Insight Decryption Failed</h3>
+            <p style='color:var(--uwo-text-muted); margin-top:5px;'>Check if database is connected or if this slug is valid.</p>
+            <button onclick="window.location.href='blogs.html'" class="btn btn-primary" style="margin-top:20px; padding:10px 24px;">Return to listing</button>
+          </div>
+        `;
+      }
+    }
+
+    // Like article
+    async function likeArticle() {
+      if (!activeBlog) return;
+      try {
+        const response = await fetch(`${API_URL}/blogs/${activeBlog.slug}/like`, { method: 'POST' });
+        if (response.ok) {
+          const updated = await response.json();
+          document.getElementById('articleLikes').innerText = updated.likes;
+          document.getElementById('btnLike').disabled = true;
+          document.getElementById('btnLike').style.opacity = '0.7';
+          document.getElementById('btnLike').innerHTML = `<i class="fa-solid fa-thumbs-up"></i> Appreciated ${updated.likes}`;
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    // Share logic
+    function shareOn(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(activeBlog ? activeBlog.title : 'Check out this UWO Insight!');
+
+      let shareUrl = '';
+      if (platform === 'twitter') shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+      else if (platform === 'linkedin') shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      else if (platform === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      else if (platform === 'whatsapp') shareUrl = `https://api.whatsapp.com/send?text=${text}%20${url}`;
+
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+
+    // Copy URL
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href);
+      const btnText = document.getElementById('btnCopyText');
+      btnText.innerText = 'Copied URL!';
+      setTimeout(() => btnText.innerText = 'Copy Article URL', 3000);
+    }
+
+    // Related blogs loader
+    async function loadRelatedBlogs(category) {
+      const relatedBox = document.getElementById('relatedBlogsList');
+      try {
+        const response = await fetch(`${API_URL}/blogs?category=${encodeURIComponent(category)}`);
+        const list = await response.json();
+
+        // Remove current blog from related suggestions
+        const filteredList = list.filter(b => b.slug !== blogSlug).slice(0, 3);
+
+        if (filteredList.length === 0) {
+          relatedBox.innerHTML = "<p style='color:var(--uwo-text-muted); font-size:12px;'>No other articles in this category.</p>";
+          return;
+        }
+
+        relatedBox.innerHTML = '';
+        filteredList.forEach(b => {
+          const item = document.createElement('div');
+          item.className = 'related-blog-item';
+          item.onclick = () => window.location.href = `blog-single.html?slug=${b.slug}`;
+          const imgSrc = resolveBlogImage(b);
+          item.innerHTML = `
+            <img src="${imgSrc}" class="related-blog-img" data-category="${b.category}" data-title="${b.title}" onerror="this.onerror=null; this.src=getFallbackImage(this.dataset.category, this.dataset.title);">
+            <div>
+              <h4 class="related-blog-title">${b.title}</h4>
+              <p style="margin:4px 0 0; font-size:10px; color:var(--uwo-text-muted); font-weight:600;">${new Date(b.createdAt).toLocaleDateString()}</p>
+            </div>
+          `;
+          relatedBox.appendChild(item);
+        });
+      } catch (err) {
+        relatedBox.innerHTML = "<p style='color:var(--uwo-text-muted); font-size:12px;'>Unable to fetch suggestions.</p>";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadArticle);
+  </script>
+
+</body>
+
+</html>

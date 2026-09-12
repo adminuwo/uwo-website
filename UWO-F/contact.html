@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UWO&trade; | Contact Us</title>
+  <link rel="icon" type="image/webp" href="images/uwo-logo.png">
+
+  <link rel="stylesheet" href="style.css?v=3.5">
+  <link rel="stylesheet" href="earn-refer.css?v=1.5">
+  <link rel="stylesheet" href="chatbot.css?v=1.1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script src="earn-refer.js?v=1.5"></script>
+  <script src="main.js?v=3.5" defer></script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xn9x5cied5");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1072566655124889');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- ================= OVERLAY ================= -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="images/uwo-logo.png" alt="UWO Logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+        <div class="projects-dropdown">
+          <span class="projects-link">Our Projects &#9662;</span>
+          <div class="projects-menu">
+            <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+            <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+            <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+          </div>
+        </div>
+        <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" class="active" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+          <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+        </button>
+      </nav>
+      <div class="hamburger" onclick="toggleDrawer()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE DRAWER (Sidebar) ================= -->
+  <div id="mobileDrawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-logo">
+        <img src="images/uwo-logo.png" alt="UWO Logo">
+        <span>UWO<sup>&trade;</sup></span>
+      </div>
+      <div class="mobile-drawer-close" onclick="toggleDrawer()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+
+    <a href="index.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Home</a>
+    <a href="about.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+
+    <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+      Our Projects <span>&#9662;</span>
+    </div>
+
+    <div id="mobileProjects" class="mobile-projects">
+      <a href="aisa.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+      <a href="/aisa-connect/" target="_blank" onclick="toggleDrawer()" rel="noopener noreferrer">AISA Connect</a>
+      <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+      <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+    </div>
+
+    <a href="our-team.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+    <a href="contact.html" onclick="toggleDrawer()" class="active" target="_blank" rel="noopener noreferrer">Contact</a>
+    <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+      <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+    </a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-centered"
+    style="min-height: 75vh; background-image:url('images/contact-hero-user.jpg'); background-size: cover; background-position: center 40%; background-repeat: no-repeat; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 10vh;">
+    <div class="hero-content-centered" data-aos="fade-up">
+      <h1>Get in Touch</h1>
+      <p>
+        Whether you are exploring partnerships, platforms, or opportunities &trade;
+        we&trade;d love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section class="section section-gold"
+    style="border-top: 4px solid var(--primary); border-bottom: 4px solid var(--primary);">
+    <div class="container">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <h2 class="section-title-left" data-aos="fade-right">
+          Contact Form
+        </h2>
+
+        <div class="contact-form" style="max-width: 100%;" data-aos="fade-up" data-aos-delay="300"
+          data-aos-duration="1000">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+            <div>
+              <label>Full Name</label>
+              <input type="text" id="name" placeholder="Your name" data-aos="fade-up" data-aos-delay="400" />
+            </div>
+
+            <div>
+              <label>Email Address</label>
+              <input type="email" id="email" placeholder="your@email.com" data-aos="fade-up" data-aos-delay="500" />
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="600" style="position:relative; z-index:2;">
+              <label for="purpose">Purpose</label>
+              <div class="csel-wrap" id="cselWrap">
+                <!-- Native select hidden, used only for value -->
+                <select id="purpose" class="csel-native" aria-hidden="true">
+                  <option value="Business">Business</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Media">Media</option>
+                </select>
+                <!-- Custom visual dropdown, built by JS -->
+              </div>
+            </div>
+
+            <div>
+              <label>Message</label>
+              <textarea rows="4" id="message" placeholder="Write your message..." data-aos="fade-up"
+                data-aos-delay="700"></textarea>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="sendMessage()">
+            Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GLOBAL FOOTPRINT ================= -->
+  <section class="section flagship-white">
+    <div class="container" style="text-align: center">
+      <h2 class="section-title" data-aos="zoom-in" data-aos-duration="1000">
+        Have an idea or challenge in mind?
+      </h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        Our team collaborates seamlessly to design, build, and scale digital
+        solutions.
+      </p>
+
+      <a href="https://api.whatsapp.com/send?phone=918358990909" target="_blank" rel="noopener noreferrer"
+        onclick="openWhatsApp(event)" class="btn btn-glow">
+        Start a Project
+      </a>
+    </div>
+  </section>
+
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <!-- LEFT SIDE -->
+      <div class="footer-left">
+        <div class="social-links">
+          <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+            <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+          </a>
+          <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper" title="WhatsApp">
+            <img src="images/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+            <img src="images/facebook..webp" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+            title="Instagram">
+            <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/uwo-business/" target="_blank" class="social-icon-wrapper"
+            title="LinkedIn">
+            <img src="images/linkedin..webp" alt="LinkedIn">
+          </a>
+          <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper" title="Twitter">
+            <img src="images/twitter..webp" alt="Twitter">
+          </a>
+          <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper" title="Pinterest">
+            <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper" title="Reddit">
+            <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+          </a>
+          <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper" title="Quora">
+            <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+          </a>
+          <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper" title="Medium">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+              <path d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z" fill="#ffffff"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank" class="social-icon-wrapper"
+            title="YouTube">
+            <img src="images/youtube..webp" alt="YouTube">
+          </a>
+        </div>
+        <p style="margin-top: 15px; margin-bottom: 0;">UWO<sup>&trade;</sup> - Unified Web Options & Services Pvt. Ltd. &copy; 2024</p>
+        <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9rem;">
+          <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+          <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+          <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+        </p>
+      </div>
+
+      <!-- D-U-N-S Registered™ Seal Wrapper -->
+      <div class="duns-seal-container" style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+        <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+      </div>
+      <div style="display: none !important;">
+        <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="footer-right">
+        <h2 class="partner-heading">AISA<sup>&trade;</sup> | AI Mall<sup>&trade;</sup> | A-Series&trade;</h2>
+        <div class="partner-logos-row">
+          <div class="logo-item"><img src="images/azure.png" alt="Azure" height="38"></div>
+          <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="38"></div>
+          <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="38"></div>
+          <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="38"></div>
+          <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="38"></div>
+          <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="38"></div>
+          <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="38"></div>
+        </div>
+        <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading Technology
+          providers <br> D-U-N-S® Registered™</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, offset: 50, duration: 800 });
+    AOS.init({ once: true, offset: 50, duration: 800 });
+    // Mobile Drawer Logic handled by main.js
+    function openWhatsApp(e) {
+      try {
+        e = e || window.event;
+        if (e && e.preventDefault) e.preventDefault();
+        var phone = '918358990909';
+        var text = 'Hello UWO, I want to start a project';
+        var appUrl = 'whatsapp://send?phone=' + phone + '&text=' + encodeURIComponent(text);
+        var webUrl = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(text);
+        var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          // Try app; if it doesn't open within 1.2s, open web fallback in a new tab
+          window.location = appUrl;
+          setTimeout(function () {
+            window.open(webUrl, '_blank');
+          }, 1200);
+        } else {
+          // Desktop: open WhatsApp Web in new tab
+          window.open(webUrl, '_blank');
+        }
+      } catch (err) {
+        // On error, fallback to web link
+        window.open('https://api.whatsapp.com/send?phone=918358990909', '_blank');
+      }
+    }
+  </script>
+
+  <!-- UWO Premium AI Chatbot Widget -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <div id="uwo-chatbot-widget">
+    <!-- Floating Toggle Button -->
+    <div class="chatbot-toggle-btn">
+      <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <!-- Main Chatbot Panel -->
+    <div class="chatbot-panel">
+      <!-- Header -->
+      <div class="chatbot-header">
+        <div class="bot-avatar">
+          <a href="admin.html">
+            <img src="images/uwo-logo.png" alt="UWO Logo">
+          </a>
+        </div>
+        <div class="header-info">
+          <h3>UWO<sup>&trade;</sup> AI Assistant</h3>
+          <p>Always Intelligent</p>
+        </div>
+        <button class="chatbot-close-btn" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Chat Area -->
+      <div class="chat-area">
+        <!-- Messages & Inline Email Form injected here -->
+      </div>
+
+      <!-- Input Bar -->
+      <div class="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+        <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button class="chatbot-send-btn">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+
+      <div class="powered-by">
+        Powered by UWO<sup>&trade;</sup> Ecosystem
+      </div>
+    </div>
+  </div>
+  <script src="chatbot.js?v=1.1"></script>
+</body>
+
+</html>

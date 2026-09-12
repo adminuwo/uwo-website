@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="style.css?v=3.5">
+<link rel="stylesheet" href="earn-refer.css?v=1.5">
+<script src="earn-refer.js?v=1.5"></script>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo" onclick="window.location.href='login.html'">
+      <img src="images/logo..webp" alt="UWO Logo">
+    </div>
+
+    <!-- DESKTOP NAV ---->
+    <nav class="nav-links">
+      <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+      <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+
+      <!-- OUR PROJECTS DROPDOWN -->
+      <div class="projects-dropdown">
+        <span class="projects-link">Our Projects ▾</span>
+        <div class="projects-menu">
+          <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+          <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+          <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+          <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+        </div>
+      </div>
+
+      <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+      <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+        <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+      </button>
+    </nav>
+
+    <!-- MOBILE HAMBURGER -->
+    <div class="hamburger" onclick="toggleDrawer()">☰</div>
+
+  </div>
+</header>
+
+<!-- ================= MOBILE DRAWER ================= -->
+<div id="mobileDrawer" class="mobile-drawer">
+
+  <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+  <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>™</sup></a>
+
+  <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+    Our Projects ▾
+  </div>
+
+  <div id="mobileProjects" class="mobile-projects">
+    <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>™</sup></a>
+    <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer">AISA Connect</a>
+    <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>™</sup></a>
+    <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>™</sup></a>
+  </div>
+
+  <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+  <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+  <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+    <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+  </a>
+</div>
+
+<script>
+  function toggleDrawer() {
+    const drawer = document.getElementById("mobileDrawer");
+    const overlay = document.getElementById("drawerOverlay");
+    if (drawer) drawer.classList.toggle("open");
+    if (overlay) overlay.classList.toggle("active");
+  }
+
+  function toggleMobileProjects() {
+    const projects = document.getElementById("mobileProjects");
+    if (projects) projects.classList.toggle("open");
+  }
+</script>

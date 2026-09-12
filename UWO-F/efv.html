@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFV&trade; Framework | UWO&trade;</title>
+    <link rel="icon" type="image/webp" href="images/uwo-logo.png">
+    <meta name="description"
+        content="EFV<sup>&trade;</sup> Framework - The Blueprint of Cognitive Frequency & Intelligent Growth Systems by UWO<sup>&trade;</sup>">
+    <link rel="stylesheet" href="style.css?v=3.5">
+    <link rel="stylesheet" href="earn-refer.css?v=1.5">
+    <link rel="stylesheet" href="chatbot.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="earn-refer.js?v=1.5"></script>
+    <script src="main.js?v=3.5" defer></script>
+    <script src="affiliate-tracker.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #D6A559;
+            --primary-gold-light: #FABE56;
+            --brand-beige: #f7efd7;
+            --brand-dark-gold: #c5a36c;
+            --brand-slate: #1e293b;
+            --bg-dark: #0B1120;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: var(--bg-dark);
+        }
+
+        /* ================= HERO SECTION ================= */
+        .hero-section {
+            position: relative;
+            text-align: center;
+            padding: 180px 24px 120px;
+            background: linear-gradient(to bottom, rgba(11, 17, 32, 0.5), rgba(11, 17, 32, 0.85)),
+                url('images/ChatGPT Image Feb 9, 2026, 09_09_27 PM.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-gold-light), var(--primary-gold));
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(214, 165, 89, 0.15);
+            border: 1px solid rgba(214, 165, 89, 0.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-badge::before {
+            content: '™';
+            font-size: 0.8rem;
+        }
+
+        .hero-section h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            color: #ffffff;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-section .tagline {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-hero {
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary-hero {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+            color: #000;
+            border: none;
+            box-shadow: 0 10px 30px rgba(214, 165, 89, 0.3);
+        }
+
+        .btn-primary-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(214, 165, 89, 0.4);
+        }
+
+        .btn-outline-hero {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline-hero:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+            background: rgba(214, 165, 89, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--primary-gold);
+            border-radius: 4px;
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @keyframes scrollDown {
+            0% {
+                opacity: 1;
+                top: 8px;
+            }
+
+            100% {
+                opacity: 0;
+                top: 20px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= CONTENT SECTIONS ================= */
+        .efv-section {
+            padding: 100px 24px;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-gold);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: var(--primary-gold);
+        }
+
+        .section-label::before {
+            right: calc(100% + 15px);
+        }
+
+        .section-label::after {
+            left: calc(100% + 15px);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Section Backgrounds */
+        .section-gold {
+            background: linear-gradient(180deg, var(--brand-beige) 0%, #fff5e6 100%);
+        }
+
+        .section-gradient {
+            background: linear-gradient(180deg, #fff5e6 0%, #e8dcc8 50%, #d4c4a8 100%);
+        }
+
+        .section-light {
+            background: linear-gradient(180deg, #d4c4a8 0%, #fdfbf7 100%);
+        }
+
+        /* ================= IMAGE CARDS ================= */
+        .efv-card {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08),
+                0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(214, 165, 89, 0.1);
+        }
+
+        .efv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-gold-light), var(--primary-gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .efv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 100px rgba(214, 165, 89, 0.15),
+                0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-gold);
+        }
+
+        .efv-card:hover::before {
+            opacity: 1;
+        }
+
+        .efv-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .efv-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .card-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #000;
+            box-shadow: 0 5px 20px rgba(214, 165, 89, 0.3);
+            z-index: 10;
+        }
+
+        /* ================= FEATURES GRID ================= */
+        .features-section {
+            background: var(--bg-dark);
+            padding: 100px 24px;
+        }
+
+        .features-section .section-title {
+            color: white;
+        }
+
+        .features-section .section-subtitle {
+            color: var(--text-muted);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(214, 165, 89, 0.08);
+            border-color: rgba(214, 165, 89, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(214, 165, 89, 0.2), rgba(214, 165, 89, 0.05));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ================= CTA SECTION ================= */
+        .cta-section {
+            background: linear-gradient(135deg, var(--brand-slate) 0%, #0f172a 100%);
+            padding: 100px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(214, 165, 89, 0.1) 0%, transparent 50%);
+            animation: pulse-bg 10s ease-in-out infinite;
+        }
+
+        @keyframes pulse-bg {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        /* ================= FOOTER ================= */
+        .efv-footer {
+            background: #0a0f1a;
+            padding: 80px 24px 40px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .subscribe-box {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto 50px;
+        }
+
+        .subscribe-box h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            padding: 6px;
+            border: 1px solid rgba(214, 165, 89, 0.2);
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: 50px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            margin-bottom: 0;
+        }
+
+        .subscribe-form input:focus {
+            background: transparent;
+        }
+
+        .subscribe-form input::placeholder {
+            color: #64748b;
+        }
+
+        .subscribe-form button {
+            padding: 14px 28px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+            color: #000;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .subscribe-form button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(214, 165, 89, 0.35);
+        }
+
+        #subscribeMessage {
+            margin-top: 15px;
+            color: var(--primary-gold);
+        }
+
+        .buy-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .buy-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .buy-links a:hover {
+            background: rgba(214, 165, 89, 0.1);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        /* ================= SOCIAL LINKS ================= */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-wrapper {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .social-icon-wrapper img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon-wrapper:hover {
+            border-color: var(--primary-gold);
+            background: rgba(214, 165, 89, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 15px rgba(214, 165, 89, 0.2);
+        }
+
+        .social-icon-wrapper:hover img {
+            transform: scale(1.15);
+        }
+
+        .buy-links img {
+            height: 28px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ================= SCROLL PROGRESS ================= */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--primary-gold), var(--primary-gold-light));
+            z-index: 10000;
+            border-radius: 0 0 4px 4px;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 140px 20px 100px;
+                min-height: 80vh;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .hero-section .tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-hero {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .efv-section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .efv-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .card-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                top: 10px;
+                right: 10px;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                gap: 15px;
+            }
+
+            .subscribe-form input {
+                width: 100%;
+                height: 60px !important;
+                min-height: 60px !important;
+                padding: 0 24px !important;
+                margin-right: 0 !important;
+                margin-bottom: 0 !important;
+                border: 2px solid white !important;
+                background: white !important;
+                color: #000 !important;
+                box-sizing: border-box !important;
+                border-radius: 50px !important;
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                font-size: 16px !important;
+                /* Prevents zoom on iOS */
+            }
+
+            .subscribe-form input::placeholder {
+                color: #666 !important;
+            }
+
+            .subscribe-form button {
+                width: 100%;
+                height: 60px !important;
+                min-height: 60px !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-sizing: border-box !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none !important;
+                border-radius: 50px !important;
+            }
+
+            .buy-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .buy-links a {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .section-label::before,
+            .section-label::after {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xn9x5cied5");
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1072566655124889');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1072566655124889&ev=PageView&noscript=1"
+    /></noscript>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="window.location.href='index.html'">
+                <img src="images/uwo-logo.png" alt="UWO Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>
+                <a href="about.html" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+                <div class="projects-dropdown">
+                    <span class="projects-link">Our Projects &#9662;</span>
+                    <div class="projects-menu">
+                        <a href="aisa.html" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+                        <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+                        <a href="efv.html" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+                    </div>
+                </div>
+                <a href="our-team.html" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+                <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+                <button type="button" id="earnReferNavbarBtn" class="earn-refer-btn" onclick="window.openEarnReferModal()" title="Earn &amp; Refer" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 8px 18px !important; border-radius: 9999px !important; border: 1.5px solid #1e293b !important; background: #ffffff !important; color: #1e293b !important; font-weight: 700 !important; font-size: 14.5px !important; cursor: pointer !important; text-decoration: none !important; margin-left: 6px !important; position: relative !important; z-index: 1001 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;">
+                  <i class="fa-solid fa-gift" style="color: #1e293b !important; font-size: 15px !important; pointer-events: none !important;"></i> Earn &amp; Refer
+                </button>
+            </nav>
+            <!-- MOBILE ICON -->
+            <div class="hamburger" onclick="toggleDrawer()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MOBILE DRAWER (Sidebar) ================= -->
+    <div id="mobileDrawer" class="mobile-drawer">
+        <div class="mobile-drawer-header">
+            <div class="mobile-drawer-logo">
+                <img src="images/uwo-logo.png" alt="UWO Logo">
+                <span>EFV&trade;</span>
+            </div>
+            <div class="mobile-drawer-close" onclick="toggleDrawer()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <a href="index.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="about.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">About UWO<sup>&trade;</sup></a>
+
+        <div class="mobile-projects-toggle" onclick="toggleMobileProjects()">
+            Our Projects <span>&#9662;</span>
+        </div>
+
+        <div id="mobileProjects" class="mobile-projects">
+            <a href="aisa.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">AISA<sup>&trade;</sup></a>
+            <a href="https://ai-mall.in" target="_blank" rel="noopener noreferrer">AI Mall<sup>&trade;</sup></a>
+            <a href="efv.html" class="active" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">EFV<sup>&trade;</sup></a>
+        </div>
+
+        <a href="our-team.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Our Team</a>
+        <a href="blogs.html" target="_blank" rel="noopener noreferrer">Blogs</a>
+        <a href="contact.html" onclick="toggleDrawer()" target="_blank" rel="noopener noreferrer">Contact</a>
+        <a href="javascript:void(0)" onclick="toggleDrawer(); openEarnReferModal();" class="mobile-earn-refer-link">
+            <i class="fa-solid fa-gift"></i> Earn &amp; Refer
+        </a>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-section">
+        <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
+            Cognitive Intelligence Framework
+        </div>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            EFV&trade; Framework
+        </h1>
+        <p class="tagline" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            The Blueprint of Cognitive Frequency & Intelligent Growth Systems.
+            A revolutionary approach to understanding consciousness and evolution.
+        </p>
+        <div class="hero-cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <a href="#explore" class="btn-hero btn-primary-hero">
+                Explore Framework&trade;
+            </a>
+            <a href="https://www.amazon.in/dp/B0GKPT184H" target="_blank" class="btn-hero btn-outline-hero">
+                Get the Book
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 1 ================= -->
+    <section id="explore" class="efv-section section-gold">
+        <div class="section-header" data-aos="fade-up">
+            <div style="display: block; margin-bottom: 16px;">
+                <span class="section-label">Foundation</span>
+            </div>
+            <h2 class="section-title">The Origin Code&trade;</h2>
+            <p class="section-subtitle">
+                Understanding the fundamental principles that govern cognitive frequency and the architecture of
+                intelligent systems.
+            </p>
+        </div>
+        <div class="efv-card" data-aos="zoom-in" data-aos-duration="1000">
+            <span class="card-number">01</span>
+            <img src="images/1.jpeg" alt="EFV Framework Part 1 - The Origin Code&trade;">
+        </div>
+    </section>
+
+    <!-- ================= SECTION 2 ================= -->
+    <section class="efv-section section-gradient">
+        <div class="section-header" data-aos="fade-up">
+            <div style="display: block; margin-bottom: 16px;">
+                <span class="section-label">Evolution</span>
+            </div>
+            <h2 class="section-title">The Growth Matrix</h2>
+            <p class="section-subtitle">
+                Exploring the interconnected pathways of intelligent evolution and systematic cognitive development.
+            </p>
+        </div>
+        <div class="efv-card" data-aos="fade-up" data-aos-duration="1000">
+            <span class="card-number">02</span>
+            <img src="images/2.svg" alt="EFV&trade; Framework Part 2 - The Growth Matrix">
+        </div>
+    </section>
+
+    <!-- ================= SECTION 3 ================= -->
+    <section class="efv-section section-light">
+        <div class="section-header" data-aos="fade-up">
+            <div style="display: block; margin-bottom: 16px;">
+                <span class="section-label">Mastery</span>
+            </div>
+            <h2 class="section-title">The Integration Protocol</h2>
+            <p class="section-subtitle">
+                Achieving harmonious integration of all framework components for complete cognitive mastery.
+            </p>
+        </div>
+        <div class="efv-card" data-aos="zoom-in-up" data-aos-duration="1000">
+            <span class="card-number">03</span>
+            <img src="images/3.jpeg" alt="EFV&trade; Framework Part 3 - The Integration Protocol">
+        </div>
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <!-- EFV Specific Top Content -->
+            <div class="efv-footer-top"
+                style="padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <div class="subscribe-box">
+                    <h4 style="color: white; font-size: 1.1rem; margin-bottom: 20px; font-weight: 500;">Subscribe for
+                        Updates</h4>
+                    <form id="subscribeForm" class="subscribe-form">
+                        <input type="email" id="subscriberEmail" placeholder="Enter your email" required
+                            style="height: 50px; padding: 0 24px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.05); color: white; outline: none; flex: 1; margin-right: 10px;">
+                        <button type="submit"
+                            style="height: 50px; padding: 0 32px; border-radius: 25px; background: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light)); color: #000; font-weight: 600; border: none; cursor: pointer;">Subscribe</button>
+                    </form>
+                    <p id="subscribeMessage" style="display: none; margin-top: 10px; color: var(--primary-gold);"></p>
+                </div>
+
+                <div class="platform-links">
+                    <a href="https://efv.uwo.in" target="_blank">
+                        <img src="images/EFV.png" alt="EFV Frequency">
+                        EFV Website
+                    </a>
+                    <a href="https://www.amazon.in/dp/B0GKPT184H" target="_blank">
+                        <img src="images/Amazon.png" alt="Amazon">
+                        Amazon
+                    </a>
+                    <a href="https://notionpress.com/in/read/efv-canon-volume-1-the-origin-code-hindi-edition"
+                        target="_blank">
+                        <img src="images/notion.png" alt="NotionPress">
+                        NotionPress
+                    </a>
+                    <a href="https://www.flipkart.com/efv-canon/p/itmd2a588b2f4fdf?pid=9798902318798" target="_blank">
+                        <img src="images/flipcard.png" alt="Flipkart">
+                        Flipkart
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- UNIFIED FLEX CONTENT -->
+            <div class="footer-container">
+                <!-- LEFT SIDE -->
+                <div class="footer-left">
+                    <div class="social-links" style="margin-bottom: 25px; justify-content: center;">
+                        <a href="mailto:admin@uwo24.com" class="social-icon-wrapper" title="Email Us">
+                            <img src="images/Gmail_Logo_512px-removebg-preview.png" alt="Email">
+                        </a>
+                        <a href="https://wa.me/918358990909" target="_blank" class="social-icon-wrapper"
+                            title="WhatsApp">
+                            <img src="images/whatsapp.svg" alt="WhatsApp">
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon-wrapper" title="Facebook">
+                            <img src="images/facebook..webp" alt="Facebook">
+                        </a>
+                        <a href="https://www.instagram.com/uwo_business/" target="_blank" class="social-icon-wrapper"
+                            title="Instagram">
+                            <img src="images/instagram-logo-transparent-background-2..webp" alt="Instagram">
+                        </a>
+                        <a href="https://www.linkedin.com/company/uwo-business/" target="_blank"
+                            class="social-icon-wrapper" title="LinkedIn">
+                            <img src="images/linkedin..webp" alt="LinkedIn">
+                        </a>
+                        <a href="https://x.com/uwo_business" target="_blank" class="social-icon-wrapper"
+                            title="Twitter">
+                            <img src="images/twitter..webp" alt="Twitter">
+                        </a>
+                        <a href="https://in.pinterest.com/UWO_Business/" target="_blank" class="social-icon-wrapper" title="Pinterest">
+                            <i class="fa-brands fa-pinterest" style="color: #E60023; font-size: 22px;"></i>
+                        </a>
+                        <a href="https://www.reddit.com/user/AcanthisittaFront692/" target="_blank" class="social-icon-wrapper" title="Reddit">
+                            <i class="fa-brands fa-reddit" style="color: #FF4500; font-size: 22px;"></i>
+                        </a>
+                        <a href="https://www.quora.com/profile/UWO-Business" target="_blank" class="social-icon-wrapper" title="Quora">
+                            <i class="fa-brands fa-quora" style="color: #B92B27; font-size: 22px;"></i>
+                        </a>
+                        <a href="https://medium.com/@sreshthi.unifiedweboption" target="_blank" class="social-icon-wrapper" title="Medium">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+                                <path d="M25 25 L35 25 L45 65 L55 25 L65 25 L75 25 L75 75 L65 75 L65 35 L55 75 L45 75 L35 35 L35 75 L25 75 Z" fill="#ffffff"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC_YQo0Y8bX54gsl8k4D9jvA" target="_blank"
+                            class="social-icon-wrapper" title="YouTube">
+                            <img src="images/youtube..webp" alt="YouTube">
+                        </a>
+                    </div>
+                    <div class="footer-brand">
+                        <h3 style="color:white; margin-bottom:10px;">EFV<sup>&trade;</sup> Framework</h3>
+                        <p style="color:rgba(255,255,255,0.6); margin-bottom:0;">By UWO<sup>&trade;</sup> - Unified Web Options &
+                            Services Pvt. Ltd.</p>
+                        <p style="margin-top: 15px; margin-bottom: 0; font-size: 0.9rem;">
+                          <a href="/terms-and-conditions" class="legal-footer-link" style="margin-right: 15px;">Terms & Conditions</a>
+                          <a href="/privacy-policy" class="legal-footer-link" style="margin-right: 15px;">Privacy Policy</a>
+                          <a href="/cookies-policy" class="legal-footer-link">Cookies Policy</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- D-U-N-S Registered™ Seal Wrapper -->
+                <div class="duns-seal-container" style="display: flex; justify-content: center; align-items: center; min-height: 97px; width: 100%;">
+                  <img src="images/duns-logo.png" alt="D-U-N-S® Registered™" style="width: 102px; height: 93px;">
+                </div>
+                <div style="display: none !important;">
+                  <script language="JavaScript" src="https://dunsregistered.dnb.com" type="text/javascript"></script>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="footer-right">
+                    <h2 class="partner-heading">AISA&trade; | AI Mall&trade; | A-Series&trade;</h2>
+                    <div class="partner-logos-row">
+                        <div class="logo-item"><img src="images/azure.png" alt="Azure" height="30"></div>
+                        <div class="logo-item"><img src="images/AWS.png" alt="AWS" height="30"></div>
+                        <div class="logo-item"><img src="images/mongodb.png" alt="MongoDB" height="30"></div>
+                        <div class="logo-item"><img src="images/notion copy.png" alt="Notion" height="30"></div>
+                        <div class="logo-item"><img src="images/google_cloud_.webp" alt="Google Cloud" height="30">
+                        </div>
+                        <div class="logo-item"><img src="images/DigitalOcean.png" alt="DigitalOcean" height="30"></div>
+                        <div class="logo-item"><img src="images/tavily.webp" alt="Tavily" height="30"></div>
+                    </div>
+                    <p class="partner-subtext">Supported by Global Startup Programs & Cloud credits from leading
+                        Technology providers <br> D-U-N-S® Registered™</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 80,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile Drawer Logic
+        function toggleDrawer() {
+            const drawer = document.getElementById("mobileDrawer");
+            const overlay = document.getElementById("drawerOverlay");
+            if (drawer) drawer.classList.toggle("open");
+            if (overlay) overlay.classList.toggle("active");
+        }
+
+        function toggleMobileProjects() {
+            const projects = document.getElementById("mobileProjects");
+            if (projects) projects.classList.toggle("open");
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Subscribe Form Logic
+        document.getElementById('subscribeForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('subscriberEmail').value;
+            const messageEl = document.getElementById('subscribeMessage');
+
+            try {
+                const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+                    ? "http://localhost:8080/api"
+                    : "https://uwo-backend-977864306871.asia-south1.run.app/api";
+
+                const affiliateCode = localStorage.getItem('uwo_affiliate_code') || '';
+                const productSlug = 'efv';
+
+                const response = await fetch(`${API_URL}/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, affiliateCode, productSlug })
+                });
+
+                const data = await response.json();
+
+                messageEl.style.display = 'block';
+                if (response.ok) {
+                    if (window.trackAffiliateLogin) {
+                        window.trackAffiliateLogin(email, 'EFV Subscriber');
+                    }
+                    messageEl.textContent = "Welcome to EFV&trade; World! Check your mail.";
+                    messageEl.style.color = "#D6A559";
+                    document.getElementById('subscriberEmail').value = '';
+                } else {
+                    messageEl.textContent = data.message || "Something went wrong.";
+                    messageEl.style.color = "#ff4d4d";
+                }
+            } catch (err) {
+                messageEl.style.display = 'block';
+                messageEl.textContent = "Server error. Try again later.";
+                messageEl.style.color = "#ff4d4d";
+            }
+        });
+
+        // Scroll Progress
+        window.onscroll = () => {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("scrollProgress").style.height = (winScroll / height * 100) + "%";
+        };
+    </script>
+    <!-- UWO Premium AI Chatbot Widget -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <div id="uwo-chatbot-widget">
+        <!-- Floating Toggle Button -->
+        <div class="chatbot-toggle-btn">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+
+        <!-- Main Chatbot Panel -->
+        <div class="chatbot-panel">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="bot-avatar">
+                    <a href="admin.html">
+                        <img src="images/uwo-logo.png" alt="UWO Logo">
+                    </a>
+                </div>
+                <div class="header-info">
+                    <h3>UWO<sup>&trade;</sup> AI Assistant</h3>
+                    <p>Always Intelligent</p>
+                </div>
+                <button class="chatbot-close-btn" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Chat Area -->
+            <div class="chat-area">
+                <!-- Messages & Inline Email Form injected here -->
+            </div>
+
+            <!-- Input Bar -->
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="How can I help you today?">
+                <button class="chatbot-mic-btn" id="chatbot-mic" title="Voice Input">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+                <button class="chatbot-send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+
+            <div class="powered-by">
+                Powered by UWO<sup>&trade;</sup> Ecosystem
+            </div>
+        </div>
+    </div>
+    <script src="chatbot.js?v=1.1"></script>
+</body>
+
+</html>

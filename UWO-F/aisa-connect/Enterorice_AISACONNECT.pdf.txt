@@ -1,0 +1,240 @@
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+AISA Connect™
+WhatsApp Business Automation — Enterprise™ Service Agreement
+This Agreement sets out the complete terms on which UWO ("Service Provider") will design, build, and deliver the
+AISA Connect™ Enterprise™ WhatsApp automation solution for the Client.
+This Service Agreement ("Agreement") is made and entered into on ________________ (Date), by and
+between:
+Service Provider: UWO ("the Company", "we", "us", "our"), engaged in the business of providing AI-
+powered business communication and automation solutions under the brand AISA Connect™.
+Client: _________________________________________ ("the Client", "you", "your"), a
+business/individual availing the AISA Connect™ WhatsApp automation service, with registered/contact
+address at _________________________________________.
+The Service Provider and the Client shall collectively be referred to as the “Parties” and individually as a
+“Party”.
+Plan Selected: Enterprise™
+Setup Fee: ₹1,00,000+ (one-time, as per Statement of Work) | Monthly Fee: ₹50,000 per month
+(+ applicable taxes)
+1. Scope of Services
+UWO shall provide the Client a WhatsApp Business Automation solution under the AISA Connect™
+platform ("the Service"), delivered under the Enterprise™ plan, consisting of a configured automation
+workflow connected to the Client's WhatsApp Business account, along with the specific features listed
+below.
+Plan Setup Fee (One-time) Monthly Fee
+Enterprise™ ₹1,00,000+ ₹50,000 / month
+All WhatsApp Automation Features (included from the base plan):
+• Advanced campaign filters
+• Conversation analytics
+• Additional chat automation
+• Commerce workflows
+• Order management panel
+• WhatsApp Pay integration
+• 24-hour support window
+• API rate limit: 300 messages/minute
+• Campaign summary reports
+• Quick replies & broadcast messaging
+
+-- 1 of 6 --
+
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+Growth Engine™ Features (also included):
+• Unlimited external app integrations
+• Session message APIs
+• Incoming message automation
+• AI agent stats
+• AI + trait-based routing
+• Detailed campaign reports
+• Labels & broadcasts
+• CRM integrations
+Additional Enterprise™ Features:
+• API rate limit up to 60,000 messages/minute
+• Dedicated customer success manager
+• Custom user-level reporting
+• High-speed messaging infrastructure
+• MarTech platform integrations
+• Clevertap / WebEngage integration
+• Advanced CRM orchestration
+• Enterprise-grade AI workflows
+Any feature, integration, workflow, channel, or capability not expressly listed above is outside the scope of
+this Agreement and shall be treated as a chargeable add-on, subject to a separate written quotation and
+mutual written agreement between the Parties. The exact scope, SLA, security requirements, and final
+commercial terms of the Enterprise™ plan shall be governed by a separate written Statement of Work /
+Proposal mutually signed by both Parties, and this Agreement shall apply in conjunction with such
+Statement of Work.
+2. Documents & Access Required from Client
+Before commencement of work, the Client shall provide UWO with the following documents, information,
+and access, without which setup and configuration of the Service cannot begin:
+• Meta Business Portfolio (Meta Business Manager) access for WhatsApp Business API setup
+• WhatsApp Business number to be connected — the number can be migrated to the WhatsApp
+Business API without losing the existing number or requiring the Client to give up their current
+WhatsApp account
+• Company logo (high-resolution, for branding on WhatsApp and the dashboard)
+• Company documentation (business registration / incorporation proof, as applicable)
+• GST certificate / GST number
+• Product/service documents (catalogue, pricing, descriptions, or similar business details)
+• Workflow document (details of the automation flow, processes, and responses the Client wants
+configured)
+UWO shall not be responsible for any delay in delivery or configuration caused by delay or failure of the
+Client in providing the above documents and access in a timely manner.
+
+-- 2 of 6 --
+
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+3. Nature of the Service — Dashboard-Based Access
+The Client acknowledges and agrees that once the WhatsApp number is connected to the AISA
+Connect™ platform via the WhatsApp Business API, all conversations, automation, and messaging shall
+be managed and shall open only through the AISA Connect™ dashboard, and not through the regular
+WhatsApp mobile/desktop application. The standard WhatsApp application may not reflect, or may only
+partially reflect, conversations and message activity once the number is connected to the API-based
+automation platform. This is a standard and expected characteristic of WhatsApp Business API-based
+automation and does not constitute a defect or deficiency in the Service.
+4. Project Delivery
+UWO shall configure and deliver the Service based on the requirements, content, credentials, and
+information furnished by the Client. Delivery timelines, where communicated, are estimates only and are
+contingent on the timely and complete cooperation of the Client, including but not limited to provision of
+WhatsApp Business API access, content, business information, and required approvals. Delays caused by
+the Client shall correspondingly extend the delivery timeline, and UWO shall bear no liability for such
+delays.
+5. Fees and Payment Terms
+Total Setup Fee: ₹1,00,000 (Rupees One Lakh) or above, as finalised in the mutually signed Statement of
+Work/Proposal, one-time, payable in advance.
+Monthly Subscription Fee: ₹50,000 (Rupees Fifty Thousand only) per month, or as revised in the
+Statement of Work/Proposal, payable in advance for each billing cycle.
+Applicable Taxes: GST and other applicable government taxes shall be charged extra, as per the
+prevailing rate at the time of invoicing.
+• The Setup Fee (₹1,00,000 or above, as per the signed Statement of Work) is payable in advance and
+in full prior to commencement of work, unless otherwise agreed in writing.
+• The Monthly Fee of ₹50,000 (or as revised in the Statement of Work) is payable in advance for each
+billing cycle and shall continue for as long as the Service remains active.
+• All fees are exclusive of applicable taxes (including GST), which shall be borne additionally by the
+Client unless stated otherwise.
+• Non-payment or delayed payment of the Monthly Fee may result in suspension of the Service without
+further notice, without affecting UWO's right to recover outstanding dues.
+• Any add-on, additional workflow, integration, or customisation requested outside the selected Plan
+shall be charged separately as per UWO's prevailing rates.
+6. No-Refund Policy
+All payments made to UWO under this Agreement, including the Setup Fee and Monthly Fee, are
+strictly non-refundable under any circumstances, including but not limited to change of mind,
+discontinuation of business, dissatisfaction with results, delay attributable to the Client, or non-usage of the
+Service by the Client after delivery. By making payment, the Client acknowledges and accepts this no-
+refund policy as a material term of this Agreement.
+
+-- 3 of 6 --
+
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+7. Post-Delivery Support
+Upon successful delivery of the Service, UWO shall provide free technical support for a period of
+one (1) month only, limited strictly to resolution of technical errors, bugs, or malfunctions directly
+attributable to UWO's configuration or development work.
+• This support does not include new feature requests, additional workflows, content changes, retraining
+of AI/automation logic due to Client business changes, or issues arising from third-party platforms
+(WhatsApp, Meta, payment gateways, CRMs, etc.).
+• After expiry of the one (1) month support period, any further support, maintenance, bug-fixing, or
+changes shall be chargeable and subject to a separate support/maintenance agreement or add-on
+purchase.
+• UWO reserves the right to determine, at its sole discretion, whether a reported issue qualifies as a
+technical error covered under this support period.
+8. Client-Provided Information and Content
+The entire project — including WhatsApp automation flows, business knowledge, responses, pricing,
+policies, product/service details, and all configurations — shall be built strictly on the basis of the
+information, content, and instructions provided by the Client.
+• The Client is solely responsible for the accuracy, completeness, legality, and correctness of all
+information, data, documents, and content shared with UWO for building the Service.
+• UWO shall not be liable for any error, inaccuracy, business loss, customer complaint, regulatory issue,
+or dispute arising from incorrect, incomplete, outdated, or misleading information provided by the
+Client.
+• Any rework required due to incorrect information or content originally supplied by the Client shall be
+treated as a change request and may be chargeable at UWO's discretion.
+• The Client warrants that it has full right, ownership, and authorisation to share all content, data, and
+credentials provided to UWO, and shall indemnify UWO against any third-party claim arising from
+such content.
+9. Client Responsibilities
+• Provide accurate business information, content, and access/credentials required for setup (including
+WhatsApp Business API/Meta Business Manager access) in a timely manner.
+• Designate a point of contact for approvals, clarifications, and testing during the project.
+• Review and approve workflows/configurations before go-live; any issues not flagged during testing
+shall not be treated as a delivery defect.
+• Comply with WhatsApp/Meta's platform policies; any suspension or restriction imposed by
+WhatsApp/Meta due to Client's business practices, messaging content, or policy violations is outside
+UWO's control and liability.
+10. Limitation of Liability
+UWO's total liability under this Agreement, if any, arising out of any claim, negligence, breach, or
+otherwise, shall not in any event exceed the amount of the Setup Fee actually paid by the Client. UWO
+shall not be liable for any indirect, incidental, consequential, or special damages, including loss of
+business, revenue, data, or goodwill, arising from use of, or inability to use, the Service, including any
+
+-- 4 of 6 --
+
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+downtime, disruption, or restriction caused by WhatsApp/Meta or any other third-party platform.
+11. Intellectual Property
+The AISA Connect™ platform, its underlying architecture, core codebase, workflow engine, templates, and
+all related technology remain the exclusive intellectual property of UWO. The Client is granted a limited,
+non-exclusive, non-transferable right to use the configured Service for its own business operations for as
+long as this Agreement remains active. The Client shall not copy, reverse-engineer, resell, sub-license, or
+replicate the underlying platform or technology.
+12. Confidentiality
+Each Party agrees to keep confidential all non-public business, technical, and commercial information
+disclosed by the other Party during the course of this engagement, and not to disclose the same to any
+third party without prior written consent, except as required by law.
+13. Term and Termination
+• This Agreement commences on the date of payment of the Setup Fee and continues on a monthly
+basis until terminated by either Party.
+• The Client may discontinue the Monthly Service by providing written notice; however, no refund shall
+be issued for the Setup Fee or for any Monthly Fee already paid.
+• UWO may suspend or terminate the Service immediately in case of non-payment, misuse of the
+platform, violation of WhatsApp/Meta policies, or breach of this Agreement by the Client.
+14. Force Majeure
+UWO shall not be held responsible for any delay, disruption, or failure in delivering the Service caused by
+circumstances beyond its reasonable control, including but not limited to internet/server outages, changes
+in WhatsApp/Meta policies or APIs, government action, or any other event of force majeure.
+15. Amendments
+No addition, deletion, or modification to this Agreement shall be valid unless made in writing and signed by
+authorised representatives of both Parties. Verbal assurances, if any, shall not be binding on UWO.
+16. Governing Law and Jurisdiction
+This Agreement shall be governed by and construed in accordance with the laws of India. Any dispute
+arising out of or in connection with this Agreement shall be subject to the exclusive jurisdiction of the courts
+at ____________________.
+17. Entire Agreement
+This Agreement, along with the selected Plan details and any written annexures, constitutes the entire
+understanding between the Parties with respect to the subject matter herein and supersedes all prior
+discussions, proposals, or representations, whether oral or written.
+
+-- 5 of 6 --
+
+UNIFIED WEB OPTIONS (UWO)
+4th Floor, SG Square near PNB Bank,
+Rampur Chowk, Jabalpur MP (482008)
+8871190020, 7389999999
+Acknowledgement
+By signing below, both Parties confirm that they have read, understood, and agreed to be bound by all
+terms and conditions set out in this Agreement, including the No-Refund Policy (Clause 6) and the limited
+Post-Delivery Support Policy (Clause 7).
+For the Service Provider (UWO)
+Signature: _______________________
+Name: ___________________________
+Designation: _____________________
+Date: ____________________________
+For the Client
+Signature: _______________________
+Name: ___________________________
+Business Name: ___________________
+Date: ____________________________
+
+-- 6 of 6 --
+
