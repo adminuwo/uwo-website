@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function Navbar({ onOpenEarnRefer, onToggleDrawer }) {
+  const location = useLocation();
+  const isBlogsPage = location.pathname.startsWith('/blogs') || location.pathname.startsWith('/blog-single');
+
   return (
-    <header className="navbar">
+    <header className={`navbar${isBlogsPage ? ' navbar-blogs' : ''}`}>
       <div className="nav-container">
         {/* LOGO */}
         <Link to="/" className="nav-logo" title="UWO Home">
@@ -40,17 +43,19 @@ export default function Navbar({ onOpenEarnRefer, onToggleDrawer }) {
             Contact
           </NavLink>
 
-          {/* EARN & REFER BUTTON */}
-          <button 
-            type="button" 
-            id="earnReferNavbarBtn" 
-            className="earn-refer-btn" 
-            onClick={onOpenEarnRefer}
-            title="Earn & Refer"
-          >
-            <i className="fa-solid fa-gift"></i>
-            <span>Earn &amp; Refer</span>
-          </button>
+          {/* EARN & REFER BUTTON - Hidden on blog editorial pages to match blogs.html */}
+          {!isBlogsPage && (
+            <button 
+              type="button" 
+              id="earnReferNavbarBtn" 
+              className="earn-refer-btn" 
+              onClick={onOpenEarnRefer}
+              title="Earn & Refer"
+            >
+              <i className="fa-solid fa-gift"></i>
+              <span>Earn &amp; Refer</span>
+            </button>
+          )}
         </nav>
 
         {/* MOBILE HAMBURGER */}

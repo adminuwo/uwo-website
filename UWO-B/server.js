@@ -1346,30 +1346,54 @@ app.get(/^\/api\/media\/(.+)$/, async (req, res) => {
         if (!filePath) {
             return res.status(400).json({ message: "File path is required" });
         }
-        if (!bucketName || !bucket) {
-            return res.status(500).json({ message: "GCS bucket is not configured" });
+
+        // 1. Attempt direct GCS streaming if bucket is available & valid
+        if (bucketName && bucket) {
+            try {
+                const file = bucket.file(filePath);
+                const [exists] = await file.exists();
+                if (exists) {
+                    const [metadata] = await file.getMetadata();
+                    res.setHeader('Content-Type', metadata.contentType || 'application/octet-stream');
+                    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+                    res.setHeader('Access-Control-Allow-Origin', '*');
+                    res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+                    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+
+                    return file.createReadStream()
+                        .on('error', (err) => {
+                            console.error("Error reading file stream:", err);
+                            if (!res.headersSent) {
+                                res.status(500).json({ message: "Error streaming file" });
+                            }
+                        })
+                        .pipe(res);
+                }
+            } catch (gcsErr) {
+                console.warn(`Local GCS stream failed for ${filePath}, falling back to Cloud Run media proxy:`, gcsErr.message);
+            }
         }
-        const file = bucket.file(filePath);
-        const [exists] = await file.exists();
-        if (!exists) {
+
+        // 2. Fallback: Proxy directly from production Cloud Run backend
+        try {
+            const prodUrl = `https://uwo-backend-977864306871.asia-south1.run.app/api/media/${filePath}`;
+            const prodRes = await fetch(prodUrl);
+            if (prodRes.ok) {
+                res.setHeader('Content-Type', prodRes.headers.get('content-type') || 'application/octet-stream');
+                res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+                res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+
+                const arrayBuffer = await prodRes.arrayBuffer();
+                return res.send(Buffer.from(arrayBuffer));
+            } else {
+                return res.status(prodRes.status).json({ message: "File not found" });
+            }
+        } catch (proxyErr) {
+            console.error("Cloud Run media fallback proxy failed:", proxyErr);
             return res.status(404).json({ message: "File not found" });
         }
-
-        const [metadata] = await file.getMetadata();
-        res.setHeader('Content-Type', metadata.contentType || 'application/octet-stream');
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
-        res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-
-        file.createReadStream()
-            .on('error', (err) => {
-                console.error("Error reading file stream:", err);
-                if (!res.headersSent) {
-                    res.status(500).json({ message: "Error streaming file" });
-                }
-            })
-            .pipe(res);
     } catch (err) {
         console.error("Media proxy error:", err);
         res.status(500).json({ error: err.message });

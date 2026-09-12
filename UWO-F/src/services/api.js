@@ -60,21 +60,36 @@ export async function fetchBlogBySlug(slug) {
 }
 
 // Fallback & Resolve image helpers for Blogs
-export function getBlogFallbackImage(category, title) {
-  return '/images/uwo-logo.png';
+export function getBlogFallbackImage(category = '', title = '') {
+  const cat = (category || '').toLowerCase();
+  const t = (title || '').toLowerCase();
+  if (cat.includes('automation') || cat.includes('artificial') || t.includes('automation')) {
+    return 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80';
+  } else if (cat.includes('tech') || cat.includes('technology') || cat.includes('ai') || t.includes('ai') || t.includes('intelligence')) {
+    return 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80';
+  } else if (cat.includes('commerce') || cat.includes('business') || cat.includes('marketing') || t.includes('brand') || t.includes('commerce')) {
+    return 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80';
+  } else if (cat.includes('research') || t.includes('study') || t.includes('research')) {
+    return 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80';
+  }
+  return 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80';
 }
 
+export const CLOUD_RUN_BACKEND = 'https://uwo-backend-977864306871.asia-south1.run.app';
+
 export function resolveBlogImageUrl(blog) {
-  if (!blog) return '/images/uwo-logo.png';
+  if (!blog) return getBlogFallbackImage();
   const img = blog.coverImage || blog.featuredImage || blog.image;
   if (!img) return getBlogFallbackImage(blog.category, blog.title);
+
+  // GCS Private assets must be fetched via Cloud Run media proxy which has valid GCP IAM credentials
   if (img.includes('storage.googleapis.com/uwo-document/')) {
     const objectPath = img.split('storage.googleapis.com/uwo-document/')[1];
-    return `${API_URL}/media/${objectPath}`;
+    return `${CLOUD_RUN_BACKEND}/api/media/${objectPath.replace(/^\/+/, '')}`;
   }
   if (img.includes('/api/media/')) {
     const mediaPath = img.split('/api/media/')[1];
-    return `${API_URL}/media/${mediaPath}`;
+    return `${CLOUD_RUN_BACKEND}/api/media/${mediaPath.replace(/^\/+/, '')}`;
   }
   if (img.startsWith('http://') || img.startsWith('https://') || img.startsWith('data:')) {
     return img;
@@ -82,12 +97,12 @@ export function resolveBlogImageUrl(blog) {
   if (img.startsWith('/uploads/')) {
     return `${BACKEND_BASE}${img}`;
   }
-  return `${API_URL}/media/${img.replace(/^\/+/, '')}`;
+  return `${CLOUD_RUN_BACKEND}/api/media/${img.replace(/^\/+/, '')}`;
 }
 
 // Contact Form submission
 export async function submitContact(formData) {
-  return await apiRequest('/contact', {
+  return await apiRequest('/contacts', {
     method: 'POST',
     body: JSON.stringify(formData)
   });
