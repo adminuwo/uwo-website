@@ -30,27 +30,31 @@ export default function HomePage() {
     return () => { isMounted = false; };
   }, []);
 
+  const PROJECT_LOGO_FALLBACKS = {
+    'aisa': '/images/aisa-logo.svg',
+    'aisa connect': '/images/aisa-logo.svg',
+    'ai mall': '/images/AIMALLL..webp',
+    'efv': '/images/EFV.png',
+  };
+
+  function getProjectFallbackLogo(name) {
+    return PROJECT_LOGO_FALLBACKS[(name || '').toLowerCase()] || '/images/uwo-logo.png';
+  }
+
   function getDefaultProjects() {
     return [
       {
         name: 'AISA',
         is_featured: true,
         project_url: 'https://aisa24.com/',
-        logo: '/images/AISA (2).png',
+        logo: '/images/aisa-logo.svg',
         short_description: 'Next-generation AI Operating System for autonomous enterprise agents and intelligent workflow orchestration.'
-      },
-      {
-        name: 'AISA Connect',
-        is_featured: false,
-        project_url: '/aisa-connect/',
-        logo: '/images/aisa-connect-logo.png',
-        short_description: 'Intelligent B2B lead generation, omnichannel prospecting, and verified customer acquisition framework.'
       },
       {
         name: 'AI Mall',
         is_featured: true,
         project_url: 'https://aimall24.com/',
-        logo: '/images/aimall logo.png',
+        logo: '/images/AIMALLL..webp',
         short_description: 'Universal decentralized marketplace for specialized AI models, enterprise agents, and cognitive microservices.'
       },
       {
@@ -193,7 +197,7 @@ export default function HomePage() {
                     alt={project.name} 
                     className="project-icon" 
                     crossOrigin="anonymous" 
-                    onError={(e) => { e.currentTarget.src = '/images/uwo-logo.png'; }} 
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = getProjectFallbackLogo(project.name); }} 
                   />
                   <h3>
                     {project.name}
