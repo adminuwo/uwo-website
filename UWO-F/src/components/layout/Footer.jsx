@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Footer({ onOpenLegal }) {
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -51,29 +52,47 @@ export default function Footer({ onOpenLegal }) {
             UWO<sup>&trade;</sup> - Unified Web Options &amp; Services Pvt. Ltd. &copy; {currentYear}
           </p>
           <p style={{ marginTop: '10px', marginBottom: 0, fontSize: '0.9rem' }}>
-            <a 
-              href="#terms" 
+            <Link 
+              to="/terms-and-conditions" 
+              state={{ backgroundLocation: location, from: location.pathname + location.search }}
               className="legal-footer-link" 
               style={{ marginRight: '15px' }}
-              onClick={(e) => { e.preventDefault(); if (onOpenLegal) onOpenLegal('terms'); }}
+              onClick={(e) => {
+                if (onOpenLegal) {
+                  e.preventDefault();
+                  onOpenLegal('terms');
+                }
+              }}
             >
               Terms &amp; Conditions
-            </a>
-            <a 
-              href="#privacy" 
+            </Link>
+            <Link 
+              to="/privacy-policy" 
+              state={{ backgroundLocation: location, from: location.pathname + location.search }}
               className="legal-footer-link" 
               style={{ marginRight: '15px' }}
-              onClick={(e) => { e.preventDefault(); if (onOpenLegal) onOpenLegal('privacy'); }}
+              onClick={(e) => {
+                if (onOpenLegal) {
+                  e.preventDefault();
+                  onOpenLegal('privacy');
+                }
+              }}
             >
               Privacy Policy
-            </a>
-            <a 
-              href="#cookies" 
+            </Link>
+            <Link 
+              to="/cookies-policy" 
+              state={{ backgroundLocation: location, from: location.pathname + location.search }}
               className="legal-footer-link"
-              onClick={(e) => { e.preventDefault(); if (onOpenLegal) onOpenLegal('cookies'); }}
+              onClick={(e) => {
+                if (onOpenLegal) {
+                  e.preventDefault();
+                  onOpenLegal('cookies');
+                }
+              }}
             >
               Cookies Policy
-            </a>
+            </Link>
           </p>
         </div>
 

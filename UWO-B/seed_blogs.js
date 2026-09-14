@@ -12,113 +12,137 @@ dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/uwo_database';
 
-const mockBlogs = [
+const authenticBlogs = [
   {
-    title: "The Shift to Autonomous Enterprise: Navigating Multi-Agent Orchestration",
-    slug: "autonomous-enterprise-multi-agent-orchestration",
+    title: "Why One AI Assistant Is Better Than Ten Apps: A Practical Guide to Working Smarter with AISA™",
+    slug: "why-one-ai-assistant-is-better-than-ten-apps-a-practical-guide-to-working-smarter-with-aisa",
+    coverImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018463038-52f42a85.webp",
+    featuredImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018463038-52f42a85.webp",
+    author: "UWO Team",
     category: "AI & Automation",
-    author: "UWO Engineering",
-    readTime: 5,
-    featuredImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    tags: ["AISA", "Productivity", "AI Assistant"],
+    seoTitle: "Why One AI Assistant Is Better Than Ten Apps: A Practical Guide to Working Smarter with AISA™",
+    seoDescription: "Every day, professionals switch between multiple apps just to complete one task. One tool to search for information, one to write, one to analyze data—the list goes on.",
     content: `
-      <p>In the evolving landscape of enterprise software, the transition from simple automated workflows to autonomous agent-driven ecosystems marks the beginning of a new industrial revolution. Rather than following rigid, pre-defined scripts, modern enterprises are deploying multi-agent swarms that dynamically collaborate, coordinate, and execute highly complex business requirements.</p>
-      
-      <h2>1. Defining the Autonomous Swarm Architecture</h2>
-      <p>Unlike single-agent systems which are restricted to narrow-focus tasks, a multi-agent orchestration layer allows for specialization. Agents are assigned discrete roles—such as Data Analysts, Quality Reviewers, Compliance Officers, and Code Execution engines—and coordinate dynamically via semantic consensus mechanisms.</p>
-      
-      <blockquote>"Autonomous orchestration does not replace human ingenuity; it scales it at a factor of thousands, freeing engineers and designers to focus strictly on creative direction."</blockquote>
-
-      <h2>2. Consensus and Decision Frameworks</h2>
-      <p>To orchestrate multiple intelligent entities seamlessly, we utilize hierarchical prompt routing combined with vector-based memory pipelines. When a high-level corporate objective is received, the router agent breaks down the problem, delegates sub-tasks to specialized sub-agents, and verifies output accuracy before compilation.</p>
-      
+      <p>Every day, professionals switch between multiple apps just to complete one task. One tool to search for information, one to write, one to analyze data, another to manage tasks—the list goes on. This constant context switching leads to cognitive fatigue, fragmented information, and significant time loss.</p>
+      <h3>The Multitasking Illusion</h3>
+      <p>Studies show that switching between applications can cost up to 40% of a worker's productive time. When your workflow is scattered across ten different software subscriptions, context is lost in translation, search is inefficient, and collaboration breaks down.</p>
+      <h3>Enter AISA™: The Unified AI Operating System</h3>
+      <p>AISA™ (AI Super Assistant) was engineered by UWO™ to solve this exact bottleneck. By integrating search, document creation, data synthesis, task management, and autonomous execution into a single cohesive interface, AISA™ eliminates the need for fragmented app silos.</p>
       <ul>
-        <li><b>Semantic Validation:</b> Checking generated outputs against organizational policies using fast embedding engines.</li>
-        <li><b>Dynamic Memory Retrieval:</b> Supplying agents with real-time contextual indexes through GCS vector embeddings.</li>
-        <li><b>Feedback Loops:</b> Enabling self-correction where failure prompts automatically trigger corrective sub-routines.</li>
+        <li><strong>Smart Deep Search:</strong> Query all your personal, workspace, and web data simultaneously.</li>
+        <li><strong>Unified Workspace:</strong> Write, edit, and analyze without leaving your primary intelligence layer.</li>
+        <li><strong>Autonomous Multi-Agent Systems:</strong> Delegate complex workflows directly to specialized background agents.</li>
       </ul>
-
-      <pre><code>// Example orchestration route snippet
-const consensusScore = await orchestrator.evaluateConsensus([
-  agentA.generateResponse(context),
-  agentB.generateResponse(context)
-]);
-if (consensusScore < 0.85) {
-  await orchestrator.triggerFeedbackCorrectionLoop();
-}</code></pre>
-
-      <h2>3. Moving Forward with UWO™ and AISA™</h2>
-      <p>Through our dedicated cognitive engines inside UWO™ and AISA™, we are bridging the gap between legacy infrastructure and intelligent autonomous layers, driving operational overhead down by up to 80% while scaling output speed globally.</p>
+      <h3>The Result: True Cognitive Focus</h3>
+      <p>By bringing every essential tool into one unified AI assistant, professionals report saving over 12 hours every week while producing higher-quality, context-aware work.</p>
     `,
-    seoTitle: "Autonomous Enterprise: Multi-Agent Orchestration Guide | UWO™",
-    seoDescription: "An in-depth look at how multi-agent swarms coordinate to execute complex corporate objectives, driving efficiency and scaling intelligent outputs.",
     status: "published",
-    views: 142,
-    likes: 48,
-    createdAt: new Date(Date.now() - 3600000 * 24 * 3) // 3 days ago
-  },
-  {
-    title: "Building Universal Scale Architecture for Real-Time Decision Engines",
-    slug: "universal-scale-architecture-real-time-decision",
-    category: "Tech Insights",
-    author: "Aditi Sharma",
-    readTime: 4,
-    featuredImage: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80",
-    content: `
-      <p>As micro-seconds dictate the success of modern SaaS portals, building data pipelines capable of ingesting millions of telemetry signals per second is no longer optional. This article details the universal scale architecture developed at UWO to route and compute telemetry in real-time.</p>
-      
-      <h2>1. The Micro-Frontend Data Density Problem</h2>
-      <p>When serving thousands of clients simultaneously, telemetry and event ingestion pipelines often bottleneck. We overcome this by utilizing edge-cached event queues, grouping events into high-density binary arrays before routing them to our central Node clusters.</p>
-      
-      <blockquote>"By treating network packets as continuous streams rather than discrete, heavy transactions, we reduce payload delivery overhead by 65%."</blockquote>
-
-      <h2>2. Sharding Strategies in Atlas Clusters</h2>
-      <p>Standard horizontal partitions are highly inefficient for high-density transactional platforms. We implement geographic sharding combined with primary-key hashing, ensuring that telemetry signals are routed to the nearest regional database node for instant write operations.</p>
-    `,
-    seoTitle: "Real-Time Universal Scale Data Architecture | UWO™",
-    seoDescription: "Discover UWO's technical approach to real-time event streaming, micro-frontend sharding strategies, and multi-region MongoDB Atlas performance.",
-    status: "published",
-    views: 89,
-    likes: 31,
-    createdAt: new Date(Date.now() - 3600000 * 24 * 1) // 1 day ago
-  },
-  {
-    title: "Redefining High-Conversion E-Commerce Interfaces with Generative Search",
-    slug: "redefining-high-conversion-ecommerce-generative-search",
-    category: "Digital Commerce",
-    author: "Sreshthi Sen",
+    views: 140,
+    likes: 54,
     readTime: 3,
-    featuredImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80",
+    createdAt: new Date("2026-08-06T12:14:23.038Z")
+  },
+  {
+    title: "How to Delete Your AISA™ Account",
+    slug: "how-to-delete-your-aisa-account",
+    coverImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018519262-5c172b24.webp",
+    featuredImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018519262-5c172b24.webp",
+    author: "UWO Support",
+    category: "AISA™",
+    tags: ["Support", "Privacy", "Account"],
+    seoTitle: "How to Delete Your AISA™ Account | UWO Privacy Standards",
+    seoDescription: "A step-by-step guide to deleting your AISA™ account and understanding your data rights under UWO privacy standards.",
     content: `
-      <p>The traditional e-commerce search bar is dead. Today's hyper-active buyers don't search using exact keywords—they ask descriptive questions, look for curated solutions, and expect highly personalized, conversational layouts. In this piece, we explore how UWO's AI Mall™ integrates generative search for peak conversion.</p>
-      
-      <h2>1. The Death of the Keyword Filter</h2>
-      <p>Standard database queries often miss high-intent customer requests because of simple spelling variations or different synonyms. By migrating to semantic search, we map customer intent rather than characters, yielding a 35% increase in user retention.</p>
+      <p>We believe in absolute data sovereignty and user privacy. If you ever decide to discontinue your journey with AISA™, we ensure the account deletion process is simple, transparent, and permanent.</p>
+      <h3>Steps to Delete Your Account:</h3>
+      <ol>
+        <li>Open your AISA™ dashboard or navigate to Account Settings.</li>
+        <li>Scroll down to the Security & Privacy section.</li>
+        <li>Click on "Delete Account" and verify your password or OTP confirmation.</li>
+        <li>Confirm the final deletion request. All your synced documents, chat histories, and API sessions will be purged in compliance with our data protection policies.</li>
+      </ol>
+      <p>If you need assistance, please contact our support team at admin@uwo24.com.</p>
     `,
-    seoTitle: "Generative Search & E-Commerce Conversions | UWO™",
-    seoDescription: "How semantic query processing and generative interfaces are replacing legacy keyword filtering to skyrocket customer conversion rates.",
     status: "published",
     views: 65,
-    likes: 22,
-    createdAt: new Date()
+    likes: 12,
+    readTime: 2,
+    createdAt: new Date("2026-08-06T12:15:19.262Z")
+  },
+  {
+    title: "The Problem Every Professional, Student, and Business Owner Faces Today",
+    slug: "the-problem-every-professional-student-and-business-owner-faces-today",
+    coverImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018046106-7b841386.webp",
+    featuredImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018046106-7b841386.webp",
+    author: "UWO Team",
+    category: "AI & Automation",
+    tags: ["Workflows", "Automation", "Focus"],
+    seoTitle: "The Problem Every Professional, Student, and Business Owner Faces Today",
+    seoDescription: "Discover why digital tool fragmentation is eroding focus, and how unified AI architecture brings effortless clarity to daily operations.",
+    content: `
+      <p>Modern professionals and students spend up to 2.5 hours every day just searching for information scattered across disparate platforms. Notes are in one app, spreadsheets in another, research papers in browser tabs, and communication in yet another silo.</p>
+      <h3>Why Tool Fragmentation Fails</h3>
+      <p>More software subscriptions do not translate to higher productivity. Instead, tool fatigue sets in, creating friction at every step of execution.</p>
+      <h3>Unified Cognitive Workspaces</h3>
+      <p>By bringing unified semantic search, autonomous agent execution, and real-time generation together, UWO provides a cohesive environment where work flows naturally without distraction.</p>
+    `,
+    status: "published",
+    views: 92,
+    likes: 31,
+    readTime: 5,
+    createdAt: new Date("2026-08-06T12:10:46.106Z")
+  },
+  {
+    title: "One Vision. Five Powerful Brands. India's First AI Ecosystem Has Arrived.",
+    slug: "one-vision-five-powerful-brands-india-s-first-ai-ecosystem-has-arrived",
+    coverImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018657975-b245bfc3.webp",
+    featuredImage: "https://storage.googleapis.com/uwo-document/blogs/images/blog-1786018657975-b245bfc3.webp",
+    author: "Gurumukh P. Ahuja, Founder — UWO™",
+    category: "Technology & AI",
+    tags: ["Ecosystem", "India AI", "Innovation"],
+    seoTitle: "One Vision. Five Powerful Brands. India's First AI Ecosystem Has Arrived.",
+    seoDescription: "What if one company could give you the AI tools to create, automate, connect, empower, and transform — all under a single ecosystem? That is exactly what UWO™ has built from the heart of Madhya Pradesh.",
+    content: `
+      <p>By Gurumukh P. Ahuja, Founder — UWO™</p>
+      <p>What if one company could give you the AI tools to create, automate, connect, empower, and transform — all under a single ecosystem?<br/>
+      That is exactly what UWO™ (Unified Web Options & Services Pvt Ltd) has built from the heart of Madhya Pradesh. This is not just another software company. This is India's most ambitious AI movement — and it started right here in Jabalpur.</p>
+      <h3>The 5 Pillars of the UWO Ecosystem:</h3>
+      <ul>
+        <li><strong>AISA™:</strong> The AI Super Assistant combining personal and enterprise workflow execution.</li>
+        <li><strong>AI Mall™:</strong> Decentralized marketplace connecting cognitive models to consumer apps.</li>
+        <li><strong>EFV™:</strong> High-performance enterprise framework validation.</li>
+        <li><strong>A-Series™:</strong> Proprietary hardware and edge computing systems.</li>
+        <li><strong>AISA Connect:</strong> Seamless integration bridge for third-party business tools.</li>
+      </ul>
+    `,
+    status: "published",
+    views: 38,
+    likes: 19,
+    readTime: 8,
+    createdAt: new Date("2026-05-19T13:02:48.786Z")
   }
 ];
 
 async function seed() {
   try {
-    console.log("🌱 Starting database seeding...");
+    console.log("🌱 Connecting to MongoDB...");
     await mongoose.connect(MONGO_URI);
-    console.log("✅ Seed database connected");
+    console.log("✅ Database connected");
 
-    // Clear existing mock data with matching slugs to avoid duplicate keys
-    const slugs = mockBlogs.map(b => b.slug);
-    await Blog.deleteMany({ slug: { $in: slugs } });
-    console.log("🗑️ Cleaned up existing sample entries");
+    for (const blog of authenticBlogs) {
+      await Blog.findOneAndUpdate(
+        { slug: blog.slug },
+        blog,
+        { upsert: true, returnDocument: 'after' }
+      );
+      console.log(`✅ Upserted blog: "${blog.title}"`);
+    }
 
-    // Insert new seeds
-    await Blog.insertMany(mockBlogs);
-    console.log("🎉 Successfully seeded 3 futuristic UWO blog publications!");
-    
-    mongoose.connection.close();
+    const total = await Blog.countDocuments();
+    console.log(`🎉 Seeding complete. Total active blogs in database: ${total}`);
+
+    await mongoose.connection.close();
     console.log("🔌 Database connection closed");
   } catch (err) {
     console.error("❌ Seeding failed:", err);

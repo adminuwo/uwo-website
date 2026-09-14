@@ -59,6 +59,11 @@ export async function fetchBlogBySlug(slug) {
   return await apiRequest(`/blogs/${slug}`);
 }
 
+// Legal Document Content API (privacy-policy, terms-and-conditions, cookies-policy)
+export async function fetchLegalPage(slug) {
+  return await apiRequest(`/legal/${slug}`);
+}
+
 // Fallback & Resolve image helpers for Blogs
 export function getBlogFallbackImage(category = '', title = '') {
   const cat = (category || '').toLowerCase();
@@ -74,6 +79,7 @@ export function getBlogFallbackImage(category = '', title = '') {
   }
   return 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80';
 }
+
 
 export const CLOUD_RUN_BACKEND = 'https://uwo-backend-977864306871.asia-south1.run.app';
 

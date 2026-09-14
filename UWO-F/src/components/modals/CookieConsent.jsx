@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function CookieConsent({ onOpenPrivacy }) {
+  const location = useLocation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -33,15 +35,18 @@ export default function CookieConsent({ onOpenPrivacy }) {
           <h3 className="cookie-popup-title">Cookie &amp; Privacy Choices</h3>
           <p className="cookie-popup-desc">
             We use cookies to personalize your experience, analyze web traffic, and optimize our AI digital platforms. By clicking "Accept All", you consent to our use of cookies as outlined in our{' '}
-            <a 
-              href="#privacy" 
+            <Link 
+              to="/privacy-policy" 
+              state={{ backgroundLocation: location, from: location.pathname + location.search }}
               onClick={(e) => { 
-                e.preventDefault(); 
-                if (onOpenPrivacy) onOpenPrivacy(); 
+                if (onOpenPrivacy) {
+                  e.preventDefault(); 
+                  onOpenPrivacy(); 
+                }
               }}
             >
               Privacy Policy
-            </a>.
+            </Link>.
           </p>
         </div>
         <div className="cookie-popup-actions">

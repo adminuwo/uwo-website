@@ -65,13 +65,14 @@ export default function HomePage() {
 
   const getLogoUrl = (logo) => {
     if (!logo) return '/images/uwo-logo.png';
+    const cloudRunBase = 'https://uwo-backend-977864306871.asia-south1.run.app';
     if (logo.includes('storage.googleapis.com/uwo-document/')) {
       const objectPath = logo.split('storage.googleapis.com/uwo-document/')[1];
-      return `${API_URL}/media/${objectPath}`;
+      return `${cloudRunBase}/api/media/${objectPath.replace(/^\/+/, '')}`;
     }
     if (logo.includes('/api/media/')) {
       const mediaPath = logo.split('/api/media/')[1];
-      return `${API_URL}/media/${mediaPath}`;
+      return `${cloudRunBase}/api/media/${mediaPath.replace(/^\/+/, '')}`;
     }
     return logo.startsWith('http') || logo.startsWith('/') ? logo : `${API_URL}/${logo}`;
   };

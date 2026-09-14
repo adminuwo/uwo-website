@@ -48,10 +48,10 @@ export default function MobileDrawer({ isOpen, onClose, onOpenEarnRefer }) {
         </div>
 
         <div className={`mobile-projects ${projectsOpen ? 'open' : ''}`}>
-          <Link to="/aisa" onClick={handleLinkClick}>AISA<sup>™</sup></Link>
+          <a href="https://aisa24.com/" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>AISA<sup>™</sup></a>
           <a href="/aisa-connect/" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>AISA Connect</a>
           <a href="https://aimall24.com/" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>AI Mall<sup>™</sup></a>
-          <Link to="/efv" onClick={handleLinkClick}>EFV<sup>™</sup></Link>
+          <a href="https://efvframework.com/index.html" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>EFV<sup>™</sup></a>
         </div>
 
         <Link to="/our-team" onClick={handleLinkClick}>Our Team</Link>
